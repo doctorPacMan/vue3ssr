@@ -8,7 +8,7 @@ export default <SSR.Scoped>function ({ config, directories, paths }: SSR.Context
 
         path: () => path.join(directories.server(), bundle.manifest()[`${config.entry.server}.js`]),
 
-        entry: async (req: Request): Promise<SSR.BundleContext> => await require(bundle.path()).default(req),
+        entry: async (req?: Request): Promise<SSR.BundleContext> => await require(bundle.path()).default(req),
     }
     return bundle
 }

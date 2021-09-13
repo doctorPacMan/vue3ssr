@@ -8,7 +8,7 @@ export declare namespace SSR {
   type Scoped = (ctx: Context) => any;
 
   /**
-   * The context data used during SSR 
+   * The context data used during SSR
    */
   interface Context {
     config: Config,
@@ -85,16 +85,16 @@ export declare namespace SSR {
 
   /**
    * Object representation of the server js bundle
-   * 
-   * The server js bundle is executed by node and its output captured to create 
+   *
+   * The server js bundle is executed by node and its output captured to create
    * the HTML output with the rendered app and initial state
    */
   interface Bundle {
     /**
      * Returns the [dist]/[server]/.../ssr-manifest.json file
-     * 
+     *
      * This file contains a mapping of non hashed file names to hashed file names
-     * 
+     *
      * Using this file you can find the entry point server.[hash].js file
      */
     manifest: () => Record<any, any>
@@ -110,10 +110,14 @@ export declare namespace SSR {
 
   interface Renderer {
     /**
+     * do some magic
+     */
+    fetchHTML: (route: string) => Promise<any>,
+    /**
      * Creates and returns the SSR response data promise
      */
     response: (req: Request, res: Response) => Promise<void>,
-    /**
+     /**
      * Converts the server app and state context data into the template context data
      */
     context: (context: BundleContext) => Promise<OutputContext>,
@@ -134,7 +138,7 @@ export declare namespace SSR {
     https: () => (req: Request, res: Response, next: () => any) => void,
     /**
      * Creates the live reload server watches for file changes
-     * 
+     *
      * Connect live reload injects a script into the page HTML to listen for changes and reloads the page
      */
     reload: () => any,

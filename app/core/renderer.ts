@@ -36,6 +36,14 @@ export default <SSR.Scoped>function (ctx: SSR.Context): SSR.Renderer {
                 .replace('<div id="app"></div>', `<div id="app">${app}</div>`)
                 .replace('<div id="state"></div>', `<script>window.__STATE__ = ${state}</script>`)
         },
-    }
+        fetchHTML: async (route: string) => {
+
+            if (!fs.existsSync(ctx.paths.template())) throw 'No template';
+            const template: Buffer = fs.readFileSync(ctx.paths.template());
+            const context: SSR.BundleContext = await bundle(ctx).entry({}); // (req)
+            const content: SSR.OutputContext = await renderer.context(context);
+            return renderer.hydrate(template, content);
+       },
+   }
     return renderer
 }

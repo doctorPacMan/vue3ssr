@@ -18,6 +18,8 @@ export default <SSR.Scoped>function (ctx: SSR.Context): void {
     config.https && app.use(https());
     config.reload && app.use(reload());
 
+    app.use('/html/', express.static('dist/html'));
+
     app.get('*', async (req: Request, res: Response) => {
         await renderer(ctx).response(req, res);
     });

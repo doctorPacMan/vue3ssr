@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "rndr": "ts-node app/render.ts",
     "build": "vue-cli-service build --dest dist/server",
     "clean": "rm -rf ./dist",
     "bundle": "npm run bundle:client && npm run bundle:server",
