@@ -6,6 +6,8 @@ module.exports = {
   publicPath: '/',
   runtimeCompiler: true,
   devServer: {
+    contentBase: ['./static'],
+    contentBasePublicPath: ['/static'],
     https: false,
     port: 8080,
     writeToDisk: true

@@ -2,7 +2,7 @@ import { createApp, createSSRApp } from 'vue'
 import { Router } from 'vue-router'
 import { createApplicationRouter } from './routing/router'
 import { isSSR } from "@/helpers";
-import App from './components/App/App.vue'
+import App from './components/App.vue'
 import PageMeta from "./components/Page/PageMeta.vue";
 import PageMetaTeleport from "./components/Page/PageMetaTeleport.vue";
 

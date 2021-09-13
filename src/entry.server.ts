@@ -7,7 +7,7 @@ export default (context: any) => {
 
     // console.log('entry', typeof context, context?.url);
     if (context?.url) router.push(context.url);
-    else router.push({path: '/'});
+    else router.push({name: 'home'});
     router.isReady()
       .then(() => {
         const matchedComponents = router.currentRoute.value.matched;

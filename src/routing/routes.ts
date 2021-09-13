@@ -2,6 +2,11 @@ export const routes = [
     {
         path: '/',
         name: 'home',
-        component: () => import(/* webpackChunkName: "Home" */ '../components/Page/HomePage.vue')
+        component: ():any => import(/* webpackChunkName: "home" */ '../components/Home/Home.vue')
+    },
+    {
+        path: '/page/',
+        name: 'page',
+        component: ():any => import(/* webpackChunkName: "page" */ '../components/Page/Page.vue')
     },
 ]
