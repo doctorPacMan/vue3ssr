@@ -1,10 +1,9 @@
 <template>
-    <div class="app">
-        <img src="/static/logo.png" />
-        <h1>APP</h1>
-        <!-- PageMetaTeleport / -->
-        <router-view />
-    </div>
+<div class="app-body">
+    <h2><img src="/static/logo.png" width="36" height="36"/> APP</h2>
+    <!-- PageMetaTeleport / -->
+    <router-view />
+</div>
 </template>
 
 <script lang="ts">

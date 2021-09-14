@@ -3,6 +3,7 @@ import { Router } from 'vue-router'
 import { createApplicationRouter } from './routing/router'
 import { isSSR } from "@/helpers";
 import App from './components/App.vue'
+import IconSvg from '@/components/icon.vue';
 import PageMeta from "./components/Page/PageMeta.vue";
 import PageMetaTeleport from "./components/Page/PageMetaTeleport.vue";
 
@@ -13,8 +14,9 @@ export function createApplication() {
 
     app.use(router)
 
-    app.component('PageMeta', PageMeta)
-    app.component('PageMetaTeleport', PageMetaTeleport)
+    app.component('icon', IconSvg);
+    app.component('PageMeta', PageMeta);
+    app.component('PageMetaTeleport', PageMetaTeleport);
 
     return { app, router };
 }

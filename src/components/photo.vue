@@ -2,9 +2,6 @@
 .ProductPhoto {
     display: inline-block;
     flex: 0 0 auto;
-    width: 158px;
-    height: 231px;
-    background: lightblue;
     & > img {
         display: block;
         width: 100%;
