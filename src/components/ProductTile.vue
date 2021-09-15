@@ -40,7 +40,7 @@
 <template>
 <div class="ProductTile">
     <div class="ProductTile__photo">
-        <Photo :name='item.photo || "1.png"'/>
+        <Photo :name='`${group}/${item.photo || "1.png"}`'/>
     </div>
     <div class="ProductTile__label">
         <span v-text='item.name'/>
@@ -58,11 +58,11 @@ import Photo from './photo.vue';
 export default defineComponent({
   components: { Photo },
   props: {
-    item: {required: true}
+    item: {required: true},
+    group: {required: true}
   },
   setup(props) {
-    // console.log(props) // { user: '' }
-
+    if (!props) console.log(props);
     return {} // anything returned here will be available for the rest of the component
   }
   // the "rest" of the component

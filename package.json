@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "server": "node server.js",
     "rndr": "ts-node app/render.ts",
     "build": "vue-cli-service build --dest dist/server",
     "clean": "rm -rf ./dist",
@@ -20,6 +21,7 @@
   "dependencies": {
     "@vue/server-renderer": "^3.0.11",
     "compression": "^1.7.4",
+    "copy-webpack-plugin": "^5.1.2",
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "less": "^3.13.1",
@@ -28,7 +30,8 @@
     "vue-class-component": "^8.0.0-0",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^4.0.0-0",
-    "webpack": "^4.46.0"
+    "webpack": "^4.46.0",
+    "webpack-merge": "^5.8.0"
   },
   "devDependencies": {
     "@types/compression": "^1.7.0",

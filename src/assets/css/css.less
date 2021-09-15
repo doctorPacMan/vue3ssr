@@ -1,6 +1,8 @@
 @import url('/static/font/font.less');
 @import url('/static/icon/css/Glyphter.css');
 
+@screen-mobile: 680px;
+@screen-tablet: 1024px;
 @blue: rgb(31, 75, 153);
 
 html, body {
@@ -18,7 +20,6 @@ html {
     outline-offset: -3px;
 }
 body {
-    padding: 24px;
     width: 100%;
     box-sizing: border-box;
     background: rgb(243, 246, 250);
@@ -124,18 +125,4 @@ button {
     &:hover {background-color: rgb(169, 0, 5)}
     line-height: 1.5rem;
     font-size: 1.25rem;
-}
-
-.button-huge {
-    min-width: 424px;
-    min-height: 5.75rem;
-    box-shadow: none;
-    border-radius: 0 26px 0 26px;
-    font-size: 28px;
-    font-weight: 300;
-    & > .icon {
-        margin: .125em .25em 0;
-        height: 1.125rem;
-        width: 1.125rem;
-    }
 }

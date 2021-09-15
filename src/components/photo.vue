@@ -12,7 +12,7 @@
 </style>
 <template>
 <i class="ProductPhoto">
-    <img :src="`/static/photo/${name}`" />
+    <img :src="`/data/photo/${name}`" />
 </i>
 </template>
 <script lang="ts">
@@ -20,7 +20,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     name: 'photo',
     props: {
-        name: {type: String, default: '1.png'}
+        name: {type: String, default: 'logo.png'}
     },
     computed: {
         // ...mapState('user', ['info', 'token']),

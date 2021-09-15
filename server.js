@@ -1,18 +1,8 @@
 const fs = require('fs');
 const express = require('express');
 
-const {createBundleRenderer} = require('vue-server-renderer');
 const dirStatic = './static';
-const dirBundle = './dist';
-
-const template = fs.readFileSync(`${dirStatic}/index.template.html`, 'utf-8');
-const serverBundle = require(`${dirBundle}/vue-ssr-server-bundle.json`);
-const clientManifest = require(`${dirBundle}/vue-ssr-client-manifest.json`);
-const renderer = createBundleRenderer(serverBundle, {
-    runInNewContext: false,
-    template,
-    clientManifest
-});
+const dirBundle = './dist/html';
 
 const server = express();
 server.use(function(req, res, next) {
@@ -24,16 +14,9 @@ server.use(function(req, res, next) {
     return req.method === 'OPTIONS' ? res.send(200) : next();
 });
 
-server.use('/dist', express.static(dirBundle));
-server.use('/site', express.static(dirBundle));
-server.use('/static', express.static(dirStatic));
-server.use('/static/favicon.ico?v=3', express.static(`${dirStatic}/favicon.ico`));
-server.use('/site/svg', express.static(`${dirBundle}/svg`));
-server.use('/robots.txt', express.static(`${dirStatic}/robots.txt`));
-server.use('/favicon.ico', express.static(`${dirStatic}/favicon.ico`));
-server.get('/pipeline-id', ((req, res) => res.end('100500')));
-server.use('/storybook', express.static(dirStorybook));
+server.use('/', express.static('./dist/html'));
 
+/*
 server.get('*', async (req, res) => {
     if (/\.(png|jpg|gif|svg|woff|woff2|ttf|eot|js.map)$/.test(req.url)) {
         res.set('Content-Type', 'text/plain; charset=utf-8');
@@ -82,8 +65,8 @@ server.use(function (err, req, res, next) {// Обработка ошибок з
     res.redirect(`/404/?code=${err.statusCode}`);
     return next();
 });
-
-const port = process.env.PORT || 8080;
+*/
+const port = process.env.PORT || 8081;
 const host = process.env.HOST || 'localhost';
 
 server.listen(port, host, function () {
