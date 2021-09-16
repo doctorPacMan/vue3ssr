@@ -11,7 +11,7 @@
         width: 100%;
         height: 231px;
         border-radius: 6px;
-        background: lightpink;
+        background: white;
         overflow: hidden;
         .ProductPhoto {
             display: block;

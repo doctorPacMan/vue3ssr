@@ -41,7 +41,7 @@ export default class PageMeta extends Vue {
 
     get head(): HeadMeta {
         return {
-            title: 'SSR title',
+            title: 'SSR title!!!',
             meta: [
                 {
                     name: "description",
@@ -51,7 +51,7 @@ export default class PageMeta extends Vue {
             links: [
                 {
                     rel: "canonical",
-                    href: 'https://php.fyi'
+                    href: 'https://apteka.tech'
                 }
             ]
         };

@@ -1,9 +1,5 @@
-@import url('/static/font/font.less');
-@import url('/static/icon/css/Glyphter.css');
-
-@screen-mobile: 680px;
-@screen-tablet: 1024px;
-@blue: rgb(31, 75, 153);
+@import '/static/font/font.less';
+@import './env.less';
 
 html, body {
     padding: 0;
@@ -16,17 +12,21 @@ html {
     line-height: 1.5;
     background: rgb(141, 141, 141);
     min-height: 100%;
-    outline: 3px dashed cyan;
+    outline: 0px dashed cyan;
     outline-offset: -3px;
 }
 body {
     width: 100%;
+    min-width: 360px;
+    overflow: auto;
+    overflow-x: hidden;
     box-sizing: border-box;
     background: rgb(243, 246, 250);
 }
-.app-body {
-    margin: 0 auto;
-    max-width: 1360px;
+
+a {
+    &:link {color: @blue}
+    &:visited {color: @darkblue}
 }
 
 strong, b {
@@ -39,12 +39,12 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     color: @blue;
 }
-h1 {font-size: 450%}
-h2 {font-size: 312.5%}
-h3 {font-size: 237.5%}
-h4 {font-size: 175%}
+h1 {font-size: @font-size-1}
+h2 {font-size: @font-size-2}
+h3 {font-size: @font-size-3} // 38px
+h4 {font-size: @font-size-4}
 h5 {
-    font-size: 125%;
+    font-size: @font-size-5;
     font-weight: normal;
 }
 h6 {
@@ -92,23 +92,25 @@ button {
     box-shadow: 0 3px 8px -5px rgba(0, 0, 0, .75);
     box-sizing: border-box;
     border-radius: .25rem;
-    background: rgb(31, 75, 153) none no-repeat 50% 50%;
+    background: @blue none no-repeat 50% 50%;
     color: white;
     min-height: 2.75rem;
     padding: .25rem .75rem;
     margin: 0;
     border: 1px solid rgba(255,255,255,.05);
     transition: background .125s linear 0s;
-    &:hover {background-color: rgb(7, 42, 103)}
+    &:hover {background-color: @darkblue}
     &:active {box-shadow: none}
     & > b {
         font-weight: 600;
     }
     & > .icon {
-        margin: .125rem .125rem 0;
+        margin: .125rem 0 0 .125rem;
         width: 1.25rem;
         height: 1.25rem;
     }
+    &:link,
+    &:visited {color: white}
 }
 
 .button {

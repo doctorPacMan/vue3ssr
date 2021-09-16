@@ -1,7 +1,7 @@
 <style lang="less" src='@/assets/css/css.less'></style>
 <style lang="less">
-@import '@/assets/css/css.less';
-.rootview {
+@import '@/assets/css/env.less';
+.siteBodyer {
     margin: 0 auto;
     min-width: 328px;
     max-width: 1600px;
@@ -45,36 +45,21 @@
 }
 </style>
 <template>
-<div class="rootview">
-    <!-- PageMetaTeleport / -->
-    <!-- img src="/static/logo.png" width="36" height="36"/ -->
-    <Articles/>
-    <div class="Intro">
-        <h1>
-            Всё для вашей красоты
-            <i>на одном сайте</i>
-        </h1>
-        <div class="Intro__search"><SearchForm /></div>
-        <div class="Intro__promos"><PromoBlock /></div>
-        <hr style="clear:both" />
-    </div>
-
-    <div class="rootview__promos">
-
-    </div>
-
-    <router-view />
-</div>
+<div class="siteHeader"><SiteHeader /></div>
+<div class="siteBodyer"><router-view /></div>
+<div class="siteHeader"><SiteFooter /></div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import SearchForm from '@/components/SearchForm.vue';
-import PromoBlock from '@/components/PromoBlock.vue';
-import Articles from '@/components/Articles.vue';
+import SiteHeader from '@/components/SiteHeader.vue';
+import SiteFooter from '@/components/SiteFooter.vue';
 export default defineComponent({
-    components: {SearchForm, PromoBlock, Articles},
-    serverPrefetch: () => (Promise.resolve(null)),
+    components: {
+        SiteHeader,
+        SiteFooter,
+    },
+    serverPrefetch: async () => null,
     name: 'root',
     props: {},
     data() {

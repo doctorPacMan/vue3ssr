@@ -9,6 +9,7 @@
     <button class="button-sale"><b>Скидки</b></button>
     <a class="button">Button</a>
     <a class="button-reds">Button</a>
+
     <a class="button-sale">
         <b>Скидки</b>
         <icon symbol="sale" />

@@ -56,7 +56,19 @@
 </style>
 <template>
 <div>
-    <div class="GoodsGroup"
+    <div class="Intro">
+        <h1>
+            Всё для вашей красоты
+            <i>на одном сайте</i>
+        </h1>
+        <div class="Intro__search"><SearchForm /></div>
+        <div class="Intro__promos"><PromoBlock /></div>
+        <hr style="clear:both" />
+    </div>
+
+    <ArticlesIntro/>
+
+    <!-- div class="GoodsGroup"
         v-for='(group, gk) in groups' :key='gk'>
 
         <a class="GoodsGroup__more link-more" :href='group.href'>
@@ -73,19 +85,25 @@
                 <ProductTile :group='group.url' :item='item'/>
             </li>
         </ul>
+    </div -->
 
-    </div>
 </div>
 </template>
 
 <script lang="ts">
 import { groups as groupsJson } from '@/../data/items';
 import { defineComponent } from 'vue';
-import ProductTile from '@/components/ProductTile.vue';
+import SearchForm from '@/components/SearchForm.vue';
+import PromoBlock from '@/components/PromoBlock.vue';
+import ArticlesIntro from '@/components/ArticlesIntro.vue';
+// import ProductTile from '@/components/ProductTile.vue';
 export default defineComponent({
     name: 'Home',
     components: {
-        ProductTile,
+        // ProductTile,
+        SearchForm,
+        PromoBlock,
+        ArticlesIntro,
     },
     computed: {
     },
