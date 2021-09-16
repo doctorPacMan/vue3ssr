@@ -3,8 +3,8 @@
 @import '@/assets/css/env.less';
 .siteBodyer {
     margin: 0 auto;
-    min-width: 328px;
-    max-width: 1600px;
+    min-width: @page-min-width;
+    max-width: @page-max-width;
     padding: 16px;
 
     .Intro {

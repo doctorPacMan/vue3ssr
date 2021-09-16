@@ -30,7 +30,7 @@
     height: 44px;
     position: relative;
     & > div {
-        max-width: 1600px;
+        max-width: @page-max-width;
         margin: 0 auto;
         height: 100%;
         display: flex;

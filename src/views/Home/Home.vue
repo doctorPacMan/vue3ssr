@@ -67,6 +67,7 @@
     </div>
 
     <ArticlesIntro/>
+    <Article/>
 
     <!-- div class="GoodsGroup"
         v-for='(group, gk) in groups' :key='gk'>
@@ -96,6 +97,7 @@ import { defineComponent } from 'vue';
 import SearchForm from '@/components/SearchForm.vue';
 import PromoBlock from '@/components/PromoBlock.vue';
 import ArticlesIntro from '@/components/ArticlesIntro.vue';
+import Article from '@/components/Article.vue';
 // import ProductTile from '@/components/ProductTile.vue';
 export default defineComponent({
     name: 'Home',
@@ -104,6 +106,7 @@ export default defineComponent({
         SearchForm,
         PromoBlock,
         ArticlesIntro,
+        Article,
     },
     computed: {
     },

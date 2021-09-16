@@ -5,7 +5,7 @@
     color: white;
     padding: 1rem 1rem 2rem;
     & > div {
-        max-width: 1600px;
+        max-width: @page-max-width;
         margin: 0 auto;
         display: flex;
         flex-flow: column nowrap;
