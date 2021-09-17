@@ -28,7 +28,7 @@ export default defineComponent({
             // groups: [],
         };
     },
-    setup(props) {
+    setup() {
         // console.log('props', props);
         return {
             groups: [...groupsJson],

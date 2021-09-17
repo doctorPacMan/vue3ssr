@@ -131,7 +131,7 @@ export default defineComponent({
         group: {required: true}
     },
     setup(props) {
-        console.log(props.group);
+        if (!props) console.log(props);
     },
 })
 </script>

@@ -1,3 +1,4 @@
+const path = require('path');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const nodeExternals = require('webpack-node-externals');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -62,6 +63,7 @@ module.exports = {
     devServer: {
         contentBase: ['./static', './css', './js', './data'],
         contentBasePublicPath: ['/static', '/css', '/js', '/data'],
+        historyApiFallback: true,
         https: false,
         port: 8080,
         writeToDisk: true

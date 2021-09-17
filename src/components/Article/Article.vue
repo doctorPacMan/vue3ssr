@@ -43,7 +43,7 @@
         height: auto;
         border-radius: 1rem;
         overflow: hidden;
-        & > img {
+        & > .webpimg {
             display: block;
             height: auto;
             width: 100%;
@@ -126,7 +126,7 @@
                 Начните с двух раз в неделю и следите за реакцией кожи. Через две недели можно увеличить частоту применения.
             </p>
             <div class="Article__image">
-                <img src="/data/article/image6.png" width="760" height="506" alt="" />
+                <webp src="/data/article/image6.png" width="760" height="506" alt=""/>
             </div>
         </section>
         <section>
