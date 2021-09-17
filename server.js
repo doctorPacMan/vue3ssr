@@ -66,7 +66,7 @@ server.use(function (err, req, res, next) {// Обработка ошибок з
     return next();
 });
 */
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 8088;
 const host = process.env.HOST || 'localhost';
 
 server.listen(port, host, function () {

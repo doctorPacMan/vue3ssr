@@ -6,7 +6,6 @@ const cssOptions = {url: true, sourceMap: false, esModule: false};
 const configExt = {
     module: {
         rules: [
-            /*
             {
                 test: /\.(png|jp?eg|gif|webp)(\?.*)?$/,
                 use: [
@@ -23,17 +22,9 @@ const configExt = {
                     },
                 ],
             }
-            */
         ]
     },
-    plugins: [
-        new CopyPlugin([
-            {
-                from: './data/photo',
-                to: '../html/data/photo',
-            }
-        ], []),
-    ],
+    plugins: [],
 /*
     module: {
         rules: [

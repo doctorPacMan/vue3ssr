@@ -153,7 +153,7 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
     name: 'SiteHeader',
-    setup(params:void) {
+    setup() {
         return {
             menuItems: [
                 {name:'Лицо', href:'https://apteka.ru/category/basic_care/face/'},

@@ -119,7 +119,7 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
     name: 'SiteFooter',
-    setup(params:void) {
+    setup() {
 
         const sections = [
             {

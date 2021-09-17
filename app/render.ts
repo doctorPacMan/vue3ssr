@@ -1,7 +1,28 @@
+import fs from 'fs';
+import fsx from 'fs-extra';
+import path from 'path';
+const rootDir = path.resolve(__dirname, '../');
+const dataDir = path.resolve(rootDir, './data');
+const distDir = path.resolve(rootDir, './dist/client/');
+const htmlDir = path.resolve(rootDir, './dist/html/');
+
+/* ==================================== */
+function writeToFile(html:string) {
+    const file = path.join(htmlDir, 'index.html');
+    fs.writeFileSync(file, html, <fs.WriteFileOptions>{
+        encoding: 'utf8',
+        mode: 0o666,
+        flag: 'w',
+    });
+
+    console.log(`html: ${html.substr(0, 48)}...`);
+    console.log(`file: ${file}`);
+}
+
+/* ==================================== */
 import context from './context'
 import renderer from './core/renderer';
 import { SSR } from './typings';
-
 const ctx: SSR.Context = context(<SSR.Config>{
   port: process.env.PORT || 8080,
   root: __dirname,
@@ -15,25 +36,18 @@ const ctx: SSR.Context = context(<SSR.Config>{
     server: 'server',
   }
 });
-
-import fs from 'fs';
-import path from 'path';
-function writeToFile(html:string) {
-    const dir = path.resolve(__dirname, '../dist/html/');
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir);
-    const file = path.join(dir, 'index.html');
-
-    fs.writeFileSync(file, html, <fs.WriteFileOptions>{
-        encoding: 'utf8',
-        mode: 0o666,
-        flag: 'w',
-    });
-
-    console.log(`html: ${html.substr(0, 48)}...`);
-    console.log(`file: ${file}`);
-}
-
 renderer(ctx).fetchHTML()
 .then((html:string) => writeToFile(html))
 .catch((err:any) => console.error('FAIL:', err))
 .finally(() => console.log('done: success'));
+
+/* ===================================== copy assets === */
+if (!fs.existsSync(htmlDir)) fs.mkdirSync(htmlDir);
+fsx.copySync(path.join(rootDir, './static'), path.join(htmlDir, './static'));
+
+fsx.copySync(path.join(dataDir, './photo'), path.join(htmlDir, './data/photo'));
+fsx.copySync(path.join(dataDir, './article'), path.join(htmlDir, './data/article'));
+
+fsx.copySync(path.join(distDir, './css'), path.join(htmlDir, './css'));
+fsx.copySync(path.join(distDir, './fonts'), path.join(htmlDir, './fonts'));
+/**/
