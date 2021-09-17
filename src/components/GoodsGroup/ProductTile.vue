@@ -53,7 +53,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Photo from './photo.vue';
+import Photo from '../photo.vue';
 
 export default defineComponent({
   components: { Photo },

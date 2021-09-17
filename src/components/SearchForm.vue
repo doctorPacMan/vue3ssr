@@ -26,7 +26,7 @@
             outline: 0;
             margin: 0;
             border: 1px solid transparent;
-            padding: 0 .25rem .0625rem 2.625rem;
+            padding: 0 .25rem .0625rem 2.5rem;
             border-radius: inherit;
             &:focus {
                 border-color: rgb(100, 138, 204);
@@ -40,13 +40,13 @@
             height: 1rem;
             color: darkgray;
             padding: .25rem;
-            margin: -.75rem 0 0 .75rem;
+            margin: -.75rem 0 0 .625rem;
         }
     }
     &__submit {
         flex: 0 0 auto;
         margin-left: .25rem;
-        & > button {width: 100px}
+        & > button {width: 96px}
     }
 }
 </style>

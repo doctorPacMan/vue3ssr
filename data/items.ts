@@ -10,6 +10,7 @@ const groups:{
     }[];
 }[] = [
     {
+        lines: 1,
         url: 'popular',
         title: 'САМЫЕ ПОПУЛЯРНЫЕ ТОВАРЫ',
         href: 'https://apteka.ru/category/proficosmetics/',
@@ -37,7 +38,6 @@ const groups:{
         ],
     },
     {
-        lines: 1,
         url: 'discuss',
         title: 'САМЫЕ ОБСУЖДАЕМЫЕ ТОВАРЫ',
         href: 'https://apteka.ru/category/proficosmetics/',
@@ -65,6 +65,7 @@ const groups:{
         ],
     },
     {
+        lines: 2,
         url: 'profcosm',
         title: 'ПРОФЕССИОНАЛЬНАЯ КОСМЕТИКА',
         href: 'https://apteka.ru/category/proficosmetics/profiface/',
