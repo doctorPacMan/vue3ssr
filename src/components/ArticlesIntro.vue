@@ -4,7 +4,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    outline: 1px solid red;
+    outline: 0px solid red;
     position: relative;
     border-radius: 20px;
     width: 100%;

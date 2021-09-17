@@ -17,8 +17,6 @@
         flex: 0 0 auto;
         margin: 0 0 0 8px;
     }
-    /** min-width: @screen-mobile @screen-tablet*/
-
     .button {
         border-radius: 0 18px 0 18px;
         min-height: 58px;

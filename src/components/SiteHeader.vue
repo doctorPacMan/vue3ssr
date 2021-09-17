@@ -14,10 +14,10 @@
     background-color: rgb(227, 30, 36);
     &:hover {background-color: rgb(169, 0, 5)}
     @media (min-width: @screen-mobile) {
-        padding: 0 .625rem .0625rem .875rem;
+        padding: 0 .625rem .125rem .875rem;
         & > b {display: unset}
         & > .icon {
-            margin-left: .25rem;
+            margin: .125rem 0 0 .25rem;
             width: 1.25rem;
             height: 1.25rem;
         }
