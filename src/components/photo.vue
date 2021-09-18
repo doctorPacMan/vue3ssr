@@ -19,16 +19,6 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
     name: 'photo',
-    props: {
-        name: {type: String, default: 'logo.png'}
-    },
-    computed: {
-        // ...mapState('user', ['info', 'token']),
-        // ...mapGetters('message', ['messages']),
-    },
-    // methods: mapActions(['start']),
-    mounted() {
-        // console.log('mm');
-    }
+    props: {},
 });
 </script>

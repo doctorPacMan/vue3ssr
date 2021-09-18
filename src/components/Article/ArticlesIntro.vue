@@ -64,7 +64,7 @@
 
 <template>
 <div class="ArticlesIntro">
-        <img src="/static/img/img2.svg" width="1339" height="261" alt="" />
+        <img src="/assets/img/img2.svg" width="1339" height="261" alt="" />
         <div>
             <a class="button"><span>Блок эксперта</span></a>
         </div>

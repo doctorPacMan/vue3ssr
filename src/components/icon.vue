@@ -22,7 +22,7 @@
 
 <script lang="ts">
 // eslint-disable-next-line
-const spritePath = require('@/../static/icon/sprite.svg');
+const spritePath = require('@/assets/sprite.svg');
 import { defineComponent } from 'vue';
 export default defineComponent({
     props: {

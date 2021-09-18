@@ -10,7 +10,7 @@
 </style>
 <template>
 <div class="siteHeader"><SiteHeader /></div>
-<div class="siteIntros"><SiteIntros /></div>
+<div class="siteIntros"><TitleImage /></div>
 <div class="siteBodyer"><router-view /></div>
 <div class="siteHeader"><SiteFooter /></div>
 </template>
@@ -18,12 +18,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import SiteHeader from '@/components/SiteHeader.vue';
-import SiteIntros from '@/components/SiteIntros.vue';
 import SiteFooter from '@/components/SiteFooter.vue';
+import TitleImage from '@/components/Intro/Intro.vue';
 export default defineComponent({
     components: {
         SiteHeader,
-        SiteIntros,
+        TitleImage,
         SiteFooter,
     },
     serverPrefetch: async () => null,

@@ -135,7 +135,7 @@
             </button>
         </div>
         <div class="SiteHeader__logo">
-            <img src="/static/img/logo.svg" width="195" height="25" />
+            <img src="/assets/img/logo.svg" width="195" height="25" />
         </div>
         <div class="SiteHeader__menu">
             <a v-for='(v, k) in menuItems' :key='k' :href="v.href">{{v.name}}</a>

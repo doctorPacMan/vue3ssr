@@ -13,7 +13,7 @@
         border-radius: 6px;
         background: white;
         overflow: hidden;
-        .ProductPhoto {
+        .webpimg {
             display: block;
             width: 100%;
             height: 100%;
@@ -40,7 +40,7 @@
 <template>
 <div class="ProductTile">
     <div class="ProductTile__photo">
-        <Photo :name='`${group}/${item.photo || "1.png"}`'/>
+        <webp :src='`/data/photo/${group}/${item.photo || "1.png"}`'/>
     </div>
     <div class="ProductTile__label">
         <span v-text='item.name'/>
@@ -53,10 +53,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Photo from '../photo.vue';
 
 export default defineComponent({
-  components: { Photo },
+  components: {},
   props: {
     item: {required: true},
     group: {required: true}

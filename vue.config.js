@@ -61,8 +61,8 @@ module.exports = {
     publicPath: '/',
     runtimeCompiler: true,
     devServer: {
-        contentBase: ['./static', './css', './js', './data'],
-        contentBasePublicPath: ['/static', '/css', '/js', '/data'],
+        contentBase: ['./src/assets', './css', './js', './data'],
+        contentBasePublicPath: ['/assets', '/css', '/js', '/data'],
         historyApiFallback: true,
         https: false,
         port: 8080,
