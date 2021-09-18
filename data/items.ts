@@ -73,14 +73,17 @@ const groups:{
             {
                 name: 'BIOMIALVEL СЫВОРОТКА УВЛАЖНЯЮЩАЯ НА ОСНОВЕ ГИАЛУРОНОВОЙ КИСЛОТЫ ДЛЯ УХОДА ЗА КОЖЕЙ ЛИЦА И ШЕИ 7МЛ N10',
                 photo: '1.jpg',
+                href: 'https://apteka.ru/category/proficosmetics/',
             },
             {
                 name: 'ESTEL PROFESSIONAL ENIGMA КРАСКА ДЛЯ БРОВЕЙ И РЕСНИЦ В НАБОРЕ ТОН ЧЕРНЫЙ 20МЛ',
                 photo: '2.jpg',
+                href: 'https://apteka.ru/category/proficosmetics/',
             },
             {
                 name: 'AMPLEN GOLD SHOT 24K ОМОЛАЖИВАЮЩАЯ АМПУЛА С ЗОЛОТОМ 24К 100МЛ',
                 photo: '3.jpg',
+                href: 'https://apteka.ru/category/proficosmetics/',
             },
             {
                 name: 'BIOMIALVEL МАСКА ВОССТАНАВЛИВАЮЩАЯ НА ОСНОВЕ ЭССЕНЦИИ ГИАЛУРОНОВОЙ КИСЛОТЫ С ТЕХНОЛОГИЕЙ 3D-МОДЕЛИРОВАНИЯ ДЛЯ ЛИЦА И ШЕИ N5',

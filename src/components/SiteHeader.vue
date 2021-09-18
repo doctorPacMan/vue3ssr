@@ -130,12 +130,12 @@
 <div class="SiteHeader" id="siteheader">
     <div>
         <div class="SiteHeader__bttn">
-            <button type="button" onclick="toggleHeaderMenu()">
+            <button type="button" aria-label="меню" onclick="toggleHeaderMenu()">
                 <icon symbol="menu"/><icon symbol="close"/>
             </button>
         </div>
         <div class="SiteHeader__logo">
-            <img src="/assets/img/logo.svg" width="195" height="25" />
+            <img src="/assets/img/logo.svg" width="195" height="25" alt="косметичка.рф"/>
         </div>
         <div class="SiteHeader__menu">
             <a v-for='(v, k) in menuItems' :key='k' :href="v.href">{{v.name}}</a>
