@@ -31,11 +31,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 export default defineComponent({
+    name: 'WebpImg',
     props: {
-        src: {type: String, required: true},
+        src: {type: String, default: '', required: true},
         alt: {type: String, default: ''},
-        width: {type: [String, Number], default: null},
-        height: {type: [String, Number], default: null},
+        width: {type: [String, Number], default: 48},
+        height: {type: [String, Number], default: 48},
     },
     setup(props) {
         const imageExt = /\.(png|gif|jpe?g|jfif)$/;

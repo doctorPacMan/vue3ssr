@@ -4,14 +4,12 @@
   </title>
   <meta
       v-for="(meta, i) in head.meta"
-      :key="`meta-${i}`"
       v-bind="attributes(meta)"
-  >
+      :key="`meta-${i}`"/>
   <link
       v-for="(link, i) in head.links"
-      :key="`link-${i}`"
       v-bind="attributes(link)"
-  >
+      :key="`link-${i}`"/>
 </template>
 
 <script lang="ts">

@@ -19,6 +19,7 @@
     h2 {
         text-align: center;
         font-size: @font-size-4;
+        margin: 0 0 1.75rem;
     }
     h4 {
         color: @darkblue;
@@ -34,9 +35,19 @@
         & + p {margin-top: 1em}
         & + h5 {margin-top: 2.5rem}
     }
-    section + section {
+
+    section {
         margin-top: 2.5rem;
+        &:first-of-type {margin-top: 0}
+        & > .webpimg {
+            margin: 2.5rem auto 0;
+            &:first-child {
+                margin-top: 0;
+                margin-bottom: 2.5rem;
+            }
+        }
     }
+
     &__image {
         margin: 2.5rem 0 0;
         width: 100%;
@@ -67,18 +78,18 @@
     }
 }
 </style>
+
 <template>
 <div class="Article">
-    <div class="Article__intro"><ArticlesIntro/></div>
+    <div class="Article__intro"><ArticleIntro/></div>
 
     <div class="Article__body">
     <article>
-        <h2>
-            <a hrf="">Очищающие маски для лица</a>
-        </h2>
+        <h2>Очищающие маски для лица</h2>
 
         <section>
-            <a href="https://apteka.ru/search/?q=%D0%BC%D0%B0%D1%81%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D0%B8%D1%86%D0%B0">Очищающие маски</a>
+            <webp src="/data/article/image6.png" width="760" height="506" alt=""/>
+            <a href="https://apteka.ru/search/?q=маски для лица">Очищающие маски</a>
             призваны сделать то, что не удалось вашим привычным средствам - удалить излишки масла , грязи и пыли из самых труднодоступных участков вместе с отмершими клетками кожи, чтобы придать ей гладкость и здоровое сияние.
             Сегодня на рынке присутствует два основных типа масок: смываемые (в основном на основе глины) и маски-пленки.
         </section>
@@ -125,10 +136,10 @@
                 Стоит помнить, что кожа представителей азиатской расы плотнее, поэтому даже с самыми мягкими энзимами стоит быть аккуратнее.
                 Начните с двух раз в неделю и следите за реакцией кожи. Через две недели можно увеличить частоту применения.
             </p>
-            <div class="Article__image">
-                <webp src="/data/article/image6.png" width="760" height="506" alt=""/>
-            </div>
+            <webp src="/data/article/image6.png" width="760" height="506" alt=""/>
+
         </section>
+
         <section>
             <h4>Несмываемые маски</h4>
 
@@ -170,12 +181,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ArticlesIntro from './ArticlesIntro.vue';
+import ArticleIntro from './ArticleIntro.vue';
 export default defineComponent({
-    components: {ArticlesIntro},
+    components: {ArticleIntro},
     name: 'Article',
-    setup() {
-        //
-    },
 })
 </script>

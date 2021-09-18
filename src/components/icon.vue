@@ -25,6 +25,7 @@
 const spritePath = require('@/assets/sprite.svg');
 import { defineComponent } from 'vue';
 export default defineComponent({
+    name: 'IconSvg',
     props: {
         symbol: {type: String, required: false, default: 'sale'}
     },

@@ -48,7 +48,7 @@ renderer(ctx).fetchHTML()
 
 /* ===================================== copy assets === */
 if (!fs.existsSync(htmlDir)) fs.mkdirSync(htmlDir);
-fsx.copySync(path.join(rootDir, './static'), path.join(htmlDir, './static'));
+fsx.copySync(path.join(rootDir, './src/assets'), path.join(htmlDir, './assets'));
 
 fsx.copySync(path.join(dataDir, './photo'), path.join(htmlDir, './data/photo'));
 fsx.copySync(path.join(dataDir, './article'), path.join(htmlDir, './data/article'));

@@ -55,16 +55,17 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  components: {},
-  props: {
-    item: {required: true},
-    group: {required: true}
-  },
-  setup(props) {
-    if (!props) console.log(props);
-    return {} // anything returned here will be available for the rest of the component
-  }
-  // the "rest" of the component
+    name: 'ProductTile',
+    components: {},
+    props: {
+        item: {required: true},
+        group: {required: true}
+    },
+    setup(props) {
+        if (!props) console.log(props);
+        return {} // anything returned here will be available for the rest of the component
+    }
+    // the "rest" of the component
 });
 /*
 import { Vue, Component, Prop } from 'vue-property-decorator'
