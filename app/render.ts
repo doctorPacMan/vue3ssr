@@ -2,10 +2,6 @@ import fs from 'fs';
 import fsx from 'fs-extra';
 import path from 'path';
 
-import sharp from 'sharp';
-// import imagemin from 'imagemin';
-// import imageminWebp from 'imagemin-webp';
-
 const rootDir = path.resolve(__dirname, '../');
 const dataDir = path.resolve(rootDir, './data');
 const distDir = path.resolve(rootDir, './dist/client/');
@@ -14,14 +10,16 @@ const htmlDir = path.resolve(rootDir, './dist/html/');
 /* ==================================== */
 function writeToFile(html:string) {
     const file = path.join(htmlDir, 'index.html');
+
+    // remove /js/bundle.js
+    // html = html.replaceAll(/<link href="\/js\/[^>]*>/gi, "");
     fs.writeFileSync(file, html, <fs.WriteFileOptions>{
         encoding: 'utf8',
-        mode: 0o666,
+        mode: 0o777,
         flag: 'w',
     });
-
-    console.log(`html: ${html.substr(0, 48)}...`);
-    console.log(`file: ${file}`);
+    // console.log(`html: ${html.substr(0, 48)}...`);
+    console.log(`html> ${file}`);
 }
 
 /* ==================================== */
@@ -57,22 +55,3 @@ fsx.copySync(path.join(distDir, './img'), path.join(htmlDir, './img'));
 fsx.copySync(path.join(distDir, './css'), path.join(htmlDir, './css'));
 fsx.copySync(path.join(distDir, './fonts'), path.join(htmlDir, './fonts'));
 console.log('copy: success');
-
-/*
-/*
-imagemin([`${imagesPath}/*.{jpg,png}`], {
-    destination: imagesPath,
-    plugins: [
-      imageminWebp({
-        //   quality: 90
-        //   ,
-        //   resize: {
-        //     width: 1000,
-        //     height: 0
-        //   }
-      }),
-    ],
-  }).then(() => {
-    console.log("Images Converted Successfully!!!");
-  });
-/**/
