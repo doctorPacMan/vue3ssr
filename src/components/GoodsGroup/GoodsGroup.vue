@@ -76,21 +76,6 @@
     &--lines-2 {
         grid-template-rows: repeat(2, max-content);
     }
-
-    /*
-    &--lines-1 {
-        @media (max-width: 1400px) {
-            & > li:nth-child(n + 4) {
-                outline-color: red;
-            }
-        }
-        @media (max-width: 600px) {
-            & > li:nth-child(n + 3) {
-                outline-color: red;
-            }
-        }
-    }
-    */
 }
 
 </style>

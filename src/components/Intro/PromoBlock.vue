@@ -55,7 +55,7 @@
 
 <template>
 <div class="PromoBlock">
-    <a class="button">
+    <a class="button" href="https://apteka.ru/promotions/">
         <span>Все акции месяца</span>
         <icon symbol="rarr" />
     </a>

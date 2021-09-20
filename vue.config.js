@@ -1,9 +1,7 @@
 const path = require('path');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const nodeExternals = require('webpack-node-externals');
-const CopyPlugin = require('copy-webpack-plugin');
 
-const cssOptions = {url: true, sourceMap: false, esModule: false};
 const configExt = {
     module: {
         rules: [
@@ -13,10 +11,7 @@ const configExt = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name(a, b) {
-                                console.log(a, b);
-                                return 'img/[name].[hash].[ext]';
-                            },
+                            name:'img/[name].[hash].[ext]',
                             outputPath: 'img',
                             publicPath: `/img`,
                         },
@@ -26,6 +21,12 @@ const configExt = {
         ]
     },
     plugins: [],
+    resolve: {
+        symlinks: false,
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+        }
+    },
 /*
     module: {
         rules: [
@@ -99,71 +100,3 @@ module.exports = {
         return process.env.SSR ? {stats: {all: true}} : {...configExt};
     },
 }
-
-/*
-const path = require('path');
-const webpack = require('webpack');
-const base = require('./base.config');
-const {merge} = require('webpack-merge');
-const CopyPlugin = require('copy-webpack-plugin');
-const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const PROD = base.mode === 'production';
-const CLOUD = process.env.CLOUD_STATIC !== 'local';
-
-const cssOptions = {url: true, sourceMap: !PROD, esModule: false};
-module.exports = merge(base, {
-    target: 'web',
-    entry: {main: './src/entry-client.ts'},
-    output: {
-        publicPath: `${CLOUD ? process.env.CLOUD_STATIC_HOST : ''}${base.output.publicPath}`,
-        filename: base.optimization.splitChunks ? undefined : '[name]~[fullhash:8].js',
-        // чанки не работают, поскольку в tsconfig должно быть "module": "esnext"
-        // chunkFilename: '[name].[fullhash:8].chunk.js'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.css$/i,
-                use: [
-                    {loader: MiniCssExtractPlugin.loader},
-                    {loader: 'css-loader', options: cssOptions},
-                ]
-            },
-            {
-                test: /\.less$/i,
-                use: [
-                    {loader: MiniCssExtractPlugin.loader},
-                    {loader: 'css-loader', options: cssOptions},
-                    {loader: 'less-loader', options: {lessOptions: {strictMath: true}}},
-                ]
-            },
-        ]
-    },
-    optimization: {
-        minimizer: [
-            '...',
-            new CssMinimizerPlugin(),
-        ],
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'style/[name].css',
-            chunkFilename: 'style/[name].[chunkhash].css',
-            ignoreOrder: false,
-        }),
-        new webpack.ProvidePlugin({Promise: 'es6-promise'}),
-        new VueSSRClientPlugin(),
-        new CopyPlugin({// копируем статику в билд
-            patterns: [{
-                from: './static',
-                to: path.resolve(base.output.path, `../static`),
-            }],
-            options: {concurrency: 100},
-        }),
-    ]
-});
-
-*/

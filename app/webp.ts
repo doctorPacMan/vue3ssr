@@ -13,7 +13,7 @@ images = images.concat(glob.sync(`${dataDir}/+(photo|article)/**/*`));
 images = images.filter(filePath => imageExt.test(filePath));
 // console.log(images); throw 'done';
 
-const trace = 1;
+const trace = 0;
 const promises:Promise<any>[] = images.map(async (filePath:string) => {
     const webpPath = filePath.replace(imageExt, '.webp');
 

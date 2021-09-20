@@ -20,6 +20,7 @@ const tracking = {
         this.ym('getClientID', (clientID) => console.log('clientID:', clientID));
     },
     ym(...args) {
+        if (typeof window === 'undefined' || !window.ym) return;
         window.ym.apply(window, [62730118, ...args]);
         return;
     },

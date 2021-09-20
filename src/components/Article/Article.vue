@@ -70,7 +70,6 @@
     }
 
     @media (min-width: @screen-tablet) {
-        padding: 3.75rem 1.5rem;
         h2 {
             font-size: @font-size-2;
         }

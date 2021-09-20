@@ -6,13 +6,16 @@
     max-width: @page-max-width;
     padding: 0 1rem;
 }
+.siteFooter {
+    margin-top: 36px;
+}
 </style>
 
 <template>
     <div class="siteHeader"><SiteHeader/></div>
     <div class="siteIntros"><TitleImage/></div>
     <div class="siteBodyer"><RouterView/></div>
-    <div class="siteHeader"><SiteFooter/></div>
+    <div class="siteFooter"><SiteFooter/></div>
 </template>
 
 <script lang="ts">

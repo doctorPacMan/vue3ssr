@@ -3,9 +3,9 @@
 .SiteFooter {
     background: @darkblue;
     color: white;
-    padding: 1rem 1rem 2rem;
+    padding: 2.5rem 1rem 2rem;
     & > div {
-        max-width: @page-max-width;
+        max-width: 1500px;
         margin: 0 auto;
         display: flex;
         flex-flow: column nowrap;
@@ -56,7 +56,7 @@
         a, a:link {
             color: white;
             text-decoration: none;
-            font-weight: 300;
+            font-weight: 600;
             font-size: @font-size-4;
         }
     }
@@ -65,7 +65,9 @@
         margin: 1.5rem 0 0;
         text-align: center;
     }
-
+    @media (min-width: @screen-mobile) {
+        padding: 4rem 1.25rem 3.5rem;
+    }
     @media (min-width: @screen-tablet) {
         & > div {
             flex-flow: row wrap;

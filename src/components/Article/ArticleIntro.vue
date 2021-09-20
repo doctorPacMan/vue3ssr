@@ -38,15 +38,19 @@
         justify-content: flex-start;
         border-radius: inherit;
     }
-    .button {
+    span {
+        display: block;
+        color: white;
+        background: @blue;
         border-radius: inherit;
         border-top-left-radius: 0;
         border-bottom-right-radius: 0;
         height: 54px;
         width: 231px;
-        padding: 0 0;
+        text-align: center;
         font-size: @font-size-4;
         font-weight: 600;
+        line-height: 1.8;
         box-shadow: none;
         & > .icon {
             margin: .125rem 0 0 .5rem;
@@ -65,9 +69,7 @@
 <template>
 <div class="ArticleIntro">
     <img src="/assets/img/img2.svg" width="1339" height="261" alt="" />
-    <div>
-        <a class="button"><span>Блок эксперта</span></a>
-    </div>
+    <div><span>Блок эксперта</span></div>
 </div>
 </template>
 
