@@ -1,29 +1,5 @@
 <style lang="less">
 @import '@/assets/css/env.less';
-.SiteHeader .button-sale {
-    padding: 0;
-    min-width: 2.75rem;
-    line-height: 1.5rem;
-    font-size: 1.25rem;
-    & > b {display: none}
-    & > .icon {
-        margin: 0;
-        width: 1.5rem;
-        height: 1.5rem;
-    }
-    background-color: rgb(227, 30, 36);
-    &:hover {background-color: rgb(169, 0, 5)}
-    @media (min-width: @screen-mobile) {
-        padding: 0 .625rem .125rem .875rem;
-        & > b {display: unset}
-        & > .icon {
-            margin: .125rem 0 0 .25rem;
-            width: 1.25rem;
-            height: 1.25rem;
-        }
-    }
-}
-
 .SiteHeader {
     background: white;
     padding: 11px 1rem 10px;
@@ -62,7 +38,29 @@
 
     &__sale {
         text-align: right;
-
+        .button {
+            padding: 0;
+            min-width: 2.75rem;
+            line-height: 1.5rem;
+            font-size: 1.25rem;
+            & > b {display: none}
+            & > .icon {
+                margin: 0;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+            background-color: rgb(227, 30, 36);
+            &:hover {background-color: rgb(169, 0, 5)}
+            @media (min-width: @screen-mobile) {
+                padding: 0 .625rem .125rem .875rem;
+                & > b {display: unset}
+                & > .icon {
+                    margin: .125rem 0 0 .25rem;
+                    width: 1.25rem;
+                    height: 1.25rem;
+                }
+            }
+        }
     }
     &__logo {
         text-align: center;
@@ -141,7 +139,7 @@
             <a v-for='(v, k) in menuItems' :key='k' :href="v.href">{{v.name}}</a>
         </div>
         <div class="SiteHeader__sale">
-            <a class="button-sale">
+            <a class="button" href="https://apteka.ru/">
                 <b>Скидки</b>
                 <icon symbol="sale" />
             </a>

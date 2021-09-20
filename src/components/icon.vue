@@ -29,11 +29,6 @@ export default defineComponent({
     props: {
         symbol: {type: String, required: false, default: 'sale'}
     },
-    data() {
-        return {
-            // href: `${this.spritePath}#${this.symbol}`,
-        }
-    },
     computed: {
         href():string {
             return `${this.spritePath}#${this.symbol}`;
