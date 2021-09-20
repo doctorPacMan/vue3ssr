@@ -139,7 +139,7 @@
             <a v-for='(v, k) in menuItems' :key='k' :href="v.href">{{v.name}}</a>
         </div>
         <div class="SiteHeader__sale">
-            <a class="button" href="https://apteka.ru/">
+            <a class="button" href="http://apteka.ru/">
                 <b>Скидки</b>
                 <icon symbol="sale" />
             </a>

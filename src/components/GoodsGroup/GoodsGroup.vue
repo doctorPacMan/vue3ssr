@@ -66,15 +66,14 @@
 
     &--lines-1,
     &--lines-2 {
-        outline-color: green;
         grid-auto-rows: 0;
-        grid-template-rows: repeat(1, 1fr);
+        grid-template-rows: repeat(1, max-content);
     }
     &--lines-1 {
         row-gap: 0;
     }
     &--lines-2 {
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: repeat(2, max-content);
     }
 
     /*
