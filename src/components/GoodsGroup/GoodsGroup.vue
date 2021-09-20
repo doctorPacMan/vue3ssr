@@ -1,6 +1,7 @@
 <style lang="less">
 @import '@/assets/css/env.less';
 .GoodsGroup {
+    margin-top: 3rem;
     & + & {
         margin-top: 5.75rem;
     }
