@@ -51,7 +51,9 @@ fsx.copySync(path.join(rootDir, './src/assets'), path.join(htmlDir, './assets'))
 fsx.copySync(path.join(dataDir, './photo'), path.join(htmlDir, './data/photo'));
 fsx.copySync(path.join(dataDir, './article'), path.join(htmlDir, './data/article'));
 
+const distCss = path.join(distDir, './css');
+if (fs.existsSync(distCss)) fsx.copySync(distCss, path.join(htmlDir, './css'));
+
 fsx.copySync(path.join(distDir, './img'), path.join(htmlDir, './img'));
-fsx.copySync(path.join(distDir, './css'), path.join(htmlDir, './css'));
 fsx.copySync(path.join(distDir, './fonts'), path.join(htmlDir, './fonts'));
 console.log('copy: success');

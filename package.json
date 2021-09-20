@@ -6,9 +6,10 @@
     "webp": "ts-node app/webp.ts",
     "render": "ts-node app/render.ts",
     "build": "run-s bundle render webp",
-    "bundle": "run-p bundle:client bundle:server",
-    "bundle:client": "vue-cli-service build --mode production",
-    "bundle:server": "cross-env SSR=1 vue-cli-service build --dest dist/server --mode production",
+    "bundle2": "run-p bundle:client bundle:server",
+    "bundle": "run-s bundle:client bundle:server",
+    "bundle:client": "vue-cli-service build --mode development",
+    "bundle:server": "cross-env SSR=1 vue-cli-service build --dest dist/server --mode development",
     "server": "node server.js",
     "serve": "vue-cli-service serve",
     "clean": "rm -rf ./dist"

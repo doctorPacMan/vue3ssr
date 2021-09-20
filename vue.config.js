@@ -22,7 +22,7 @@ const configExt = {
     },
     plugins: [],
     resolve: {
-        symlinks: false,
+        symlinks: true,
         alias: {
             '@': path.resolve(__dirname, './src'),
         }

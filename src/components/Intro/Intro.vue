@@ -90,6 +90,7 @@ import { defineComponent } from 'vue'
 import SearchForm from './SearchForm.vue';
 import PromoBlock from './PromoBlock.vue';
 export default defineComponent({
+    name: 'TitleImage',
     components: {
         SearchForm,
         PromoBlock,
