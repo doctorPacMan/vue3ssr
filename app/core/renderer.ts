@@ -22,23 +22,25 @@ export default <SSR.Scoped>function (ctx: SSR.Context): SSR.Renderer {
             }
         },
         context: async ({ app, state }: SSR.BundleContext): Promise<SSR.OutputContext> => {
+
+            const appHead = h(app._context.components.AppHead as any);
             return {
+                head: await renderToString(appHead),
                 app: await renderToString(app),
                 state: JSON.stringify(state),
-                meta: await renderToString(
-                    h(app._context.components.PageMeta as any)
-                )
             };
         },
-        hydrate: (template: Buffer, { app, meta, state }: SSR.OutputContext) => {
-            return template.toString()
-                .replace('<meta name="meta">', meta)
+        hydrate: (template: Buffer, { app, head, state }: SSR.OutputContext) => {
+            const html = template.toString()
+                .replace('<meta name="head">', head)
                 .replace('<div id="app"></div>', `<div id="app">${app}</div>`)
-                .replace('<div id="state"></div>', `<script>window.__STATE__ = ${state}</script>`)
+                .replace('<div id="state"></div>', `<script>window.__STATE__ = ${state}</script>`);
+            return html;
         },
         fetchHTML: async (route: string) => {
 
             if (!fs.existsSync(ctx.paths.template())) throw 'No template';
+
             const template: Buffer = fs.readFileSync(ctx.paths.template());
             const context: SSR.BundleContext = await bundle(ctx).entry({}); // (req)
             const content: SSR.OutputContext = await renderer.context(context);

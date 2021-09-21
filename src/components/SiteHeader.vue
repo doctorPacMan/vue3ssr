@@ -143,7 +143,7 @@
         </div>
 
         <div class="SiteHeader__sale">
-            <a class="button" aria-label="Скидки" href="http://apteka.ru/">
+            <a class="button" aria-label="Скидки" href="https://apteka.ru/">
                 <b>Скидки</b>
                 <icon symbol="sale" />
             </a>

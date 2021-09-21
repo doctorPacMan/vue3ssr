@@ -80,7 +80,7 @@ export declare namespace SSR {
   interface OutputContext {
     app: string,
     state: string
-    meta: string
+    head: string
   }
 
   /**

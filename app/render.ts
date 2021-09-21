@@ -11,8 +11,10 @@ const htmlDir = path.resolve(rootDir, './dist/html/');
 function writeToFile(html:string) {
     const file = path.join(htmlDir, 'index.html');
 
-    // remove /js/bundle.js
-    // html = html.replaceAll(/<link href="\/js\/[^>]*>/gi, "");
+    // remove bundle.js
+    html = html.replaceAll(/<link href="\/js\/[^>]*>/gi, '');
+    html = html.replaceAll(/<script src="\/js\/[^>]*>/gi, '');
+
     fs.writeFileSync(file, html, <fs.WriteFileOptions>{
         encoding: 'utf8',
         mode: 0o777,
@@ -54,6 +56,10 @@ fsx.copySync(path.join(dataDir, './article'), path.join(htmlDir, './data/article
 const distCss = path.join(distDir, './css');
 if (fs.existsSync(distCss)) fsx.copySync(distCss, path.join(htmlDir, './css'));
 
-fsx.copySync(path.join(distDir, './img'), path.join(htmlDir, './img'));
-fsx.copySync(path.join(distDir, './fonts'), path.join(htmlDir, './fonts'));
+const distImg = path.join(distDir, './img');
+if (fs.existsSync(distImg)) fsx.copySync(distImg, path.join(htmlDir, './img'));
+
+const distFnt = path.join(distDir, './fonts');
+if (fs.existsSync(distFnt)) fsx.copySync(distFnt, path.join(htmlDir, './fonts'));
+
 console.log('copy: success');

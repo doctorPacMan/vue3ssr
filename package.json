@@ -8,10 +8,10 @@
     "build": "run-s bundle render webp",
     "bundle2": "run-p bundle:client bundle:server",
     "bundle": "run-s bundle:client bundle:server",
-    "bundle:client": "vue-cli-service build --mode development",
-    "bundle:server": "cross-env SSR=1 vue-cli-service build --dest dist/server --mode development",
+    "bundle:client": "vue-cli-service build --mode production",
+    "bundle:server": "cross-env SSR=1 vue-cli-service build --dest dist/server --mode production",
     "server": "node server.js",
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --mode development",
     "clean": "rm -rf ./dist"
   },
   "dependencies": {

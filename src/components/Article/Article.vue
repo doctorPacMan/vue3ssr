@@ -16,9 +16,9 @@
         margin: 0 auto;
     }
 
-    h2 {
+    h3 {
         text-align: center;
-        font-size: @font-size-4;
+        font-size: @font-size-3;
         margin: 0 0 1.75rem;
     }
     h4 {
@@ -70,7 +70,7 @@
     }
 
     @media (min-width: @screen-tablet) {
-        h2 {
+        h3 {
             font-size: @font-size-2;
         }
     }
@@ -83,7 +83,7 @@
 
     <div class="Article__body">
     <article>
-        <h2>Очищающие маски для лица</h2>
+        <h3>Очищающие маски для лица</h3>
 
         <section>
             <webp src="/data/article/image5.jpg" width="760" height="506" alt=""/>
@@ -182,7 +182,7 @@
 import { defineComponent } from 'vue'
 import ArticleIntro from './ArticleIntro.vue';
 export default defineComponent({
-    components: {ArticleIntro},
     name: 'Article',
+    components: {ArticleIntro},
 })
 </script>

@@ -11,7 +11,7 @@
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: flex-end;
-        & > h3 {
+        & > h2 {
             margin: 0;
             font-size: @font-size-4;
         }
@@ -83,7 +83,7 @@
 <div class="GoodsGroup">
 
         <div class="GoodsGroup__title">
-            <h3>{{group.title}}</h3>
+            <h2>{{group.title}}</h2>
             <a class="link-rarr" :href='group.href'>
                 <span>Больше товаров</span>
                 <icon symbol="rarr" />

@@ -50,7 +50,6 @@
         }
     }
 }
-
 </style>
 
 <template>
@@ -64,5 +63,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-export default defineComponent({name: 'PromoBlock'});
+export default defineComponent({
+    name: 'PromoBlock',
+});
 </script>
