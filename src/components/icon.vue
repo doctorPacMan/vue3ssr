@@ -34,7 +34,8 @@ export default defineComponent({
             return `${this.spritePath}#${this.symbol}`;
         },
         spritePath():string {
-            return spritePath.default || spritePath || '/svgsprite';
+            return '/assets/sprite.svg';
+            // return spritePath.default || spritePath || '/svgsprite';
         }
     },
 });

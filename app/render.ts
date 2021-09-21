@@ -1,11 +1,16 @@
 import fs from 'fs';
 import fsx from 'fs-extra';
 import path from 'path';
+import rimraf from 'rimraf';
 
 const rootDir = path.resolve(__dirname, '../');
 const dataDir = path.resolve(rootDir, './data');
 const distDir = path.resolve(rootDir, './dist/client/');
 const htmlDir = path.resolve(rootDir, './dist/html/');
+
+// cleanup /dist/html/
+rimraf.sync(htmlDir);
+fs.mkdirSync(htmlDir);
 
 /* ==================================== */
 function writeToFile(html:string) {
@@ -47,7 +52,7 @@ renderer(ctx).fetchHTML()
 .finally(() => console.log('html: success'));
 
 /* ===================================== copy assets === */
-if (!fs.existsSync(htmlDir)) fs.mkdirSync(htmlDir);
+// if (!fs.existsSync(htmlDir)) ;
 fsx.copySync(path.join(rootDir, './src/assets'), path.join(htmlDir, './assets'));
 
 fsx.copySync(path.join(dataDir, './photo'), path.join(htmlDir, './data/photo'));
@@ -56,10 +61,11 @@ fsx.copySync(path.join(dataDir, './article'), path.join(htmlDir, './data/article
 const distCss = path.join(distDir, './css');
 if (fs.existsSync(distCss)) fsx.copySync(distCss, path.join(htmlDir, './css'));
 
-const distImg = path.join(distDir, './img');
-if (fs.existsSync(distImg)) fsx.copySync(distImg, path.join(htmlDir, './img'));
+// const distImg = path.join(distDir, './img');
+// if (fs.existsSync(distImg)) fsx.copySync(distImg, path.join(htmlDir, './img'));
 
 const distFnt = path.join(distDir, './fonts');
 if (fs.existsSync(distFnt)) fsx.copySync(distFnt, path.join(htmlDir, './fonts'));
+rimraf.sync(path.join(htmlDir, './assets/fonts'));
 
 console.log('copy: success');

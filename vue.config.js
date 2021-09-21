@@ -6,7 +6,7 @@ const configExt = {
     module: {
         rules: [
             {
-                test: /\.(png|jp?eg|gif|webp)(\?.*)?$/,
+                test: /\.(png|jp?eg|gif|webp|svg)(\?.*)?$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -70,12 +70,10 @@ module.exports = {
         writeToDisk: true
     },
     chainWebpack: (config) => {
-        config.entryPoints.delete('app')
+        config.entryPoints.delete('app');
 
-        if (!process.env.SSR) {
-            config.entry('client').add('./src/entry.client.ts');
-            return
-        }
+        if (!process.env.SSR) return config.entry('client').add('./src/entry.client.ts');
+
         config.entry('server').add('./src/entry.server.ts');
 
         config.target('node');
@@ -89,14 +87,21 @@ module.exports = {
 
         config.plugins.delete('hmr');
         config.plugins.delete('html');
-        config.plugins.delete('copy');
         config.plugins.delete('preload');
         config.plugins.delete('prefetch');
         config.plugins.delete('progress');
-        config.plugins.delete('friendly-errors');
         config.plugins.delete('mini-css-extract-plugin');
+        config.plugins.delete('friendly-errors');
     },
     configureWebpack: (config) => {
-        return process.env.SSR ? {stats: {all: true}} : {...configExt};
+        return !process.env.SSR ? {...configExt} : {
+            stats: {all: true},
+            module: {
+                rules: [
+                    {test: /\.css$/i, loader: 'null-loader'},
+                    {test: /\.less$/i, loader: 'null-loader'},
+                ]
+            },
+        };
     },
 }
