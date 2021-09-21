@@ -38,6 +38,7 @@ const groups:{
         ],
     },
     {
+        lines: 1,
         url: 'discuss',
         title: 'САМЫЕ ОБСУЖДАЕМЫЕ ТОВАРЫ',
         href: 'https://apteka.ru/category/proficosmetics/',

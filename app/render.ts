@@ -60,12 +60,13 @@ fsx.copySync(path.join(dataDir, './article'), path.join(htmlDir, './data/article
 
 const distCss = path.join(distDir, './css');
 if (fs.existsSync(distCss)) fsx.copySync(distCss, path.join(htmlDir, './css'));
-
-// const distImg = path.join(distDir, './img');
-// if (fs.existsSync(distImg)) fsx.copySync(distImg, path.join(htmlDir, './img'));
+rimraf.sync(path.join(htmlDir, './assets/css'));
 
 const distFnt = path.join(distDir, './fonts');
 if (fs.existsSync(distFnt)) fsx.copySync(distFnt, path.join(htmlDir, './fonts'));
 rimraf.sync(path.join(htmlDir, './assets/fonts'));
+
+const distImg = path.join(distDir, './img');
+if (fs.existsSync(distImg)) fsx.copySync(distImg, path.join(htmlDir, './img'));
 
 console.log('copy: success');

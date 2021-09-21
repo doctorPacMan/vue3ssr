@@ -1,9 +1,12 @@
 <style lang="less">
 @import '@/assets/css/env.less';
 .Article {
+    margin: 3rem 0 0;
+
     &__intro {
         margin: 0 0 1rem;
     }
+
     &__body {
         border-radius: 1.75rem;
         font-size: 1.125rem;
