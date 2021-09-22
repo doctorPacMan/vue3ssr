@@ -1,5 +1,5 @@
 const $tracking = {
-    googleId: 'UA-35149245-1',
+    googleId: 'G-HYL5PFC35Q',
     yandexId: 62730118,
     get ymApi() {
         return window[`yaCounter${this.yandexId}`];
