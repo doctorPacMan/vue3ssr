@@ -52,7 +52,6 @@ renderer(ctx).fetchHTML()
 .finally(() => console.log('html: success'));
 
 /* ===================================== copy assets === */
-// if (!fs.existsSync(htmlDir)) ;
 fsx.copySync(path.join(rootDir, './src/assets'), path.join(htmlDir, './assets'));
 
 fsx.copySync(path.join(dataDir, './photo'), path.join(htmlDir, './data/photo'));
