@@ -1,20 +1,72 @@
-/*
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+window['$tracking'] = {
+    googleId: 'UA-35149245-1',
+    yandexId: 62730118,
+    ytag(action, ...args) {
+        if (typeof window === 'undefined') return;
+        if (!window['ym']) {
+            window['ym'] = (...ymArguments) => {
+                window['ym'].a = window['ym'].a || [];
+                window['ym'].a.push(ymArguments);
+            };
+            window['ym'].l = Date.now();
+        }
+        const payload = [this.yandexId, action, ...args];
+        window['ym'].apply(window, payload);
+        this.trace(`ytag -> ${action}`, payload);
+    },
+    reachGoal(name, params = {}) {
+        const payload = !params ? undefined : {...params};
+        this.ytag('reachGoal', name, payload);
+    },
+    gtag(action, ...args) {
+        if (typeof window === 'undefined') return;
+        window['gtag'].apply(window, !args ? [action] : [action, ...args]);
+        // this.trace(`gtag -> ${action}`, !args ? [] : [...args]);
+    },
+    gtagEvent(name, params = {}) {
+        const payload = Array.isArray(params) ? [...params] : {...params};
+        this.gtag('event', name, payload);
+    },
+    initGoogleAnalytics() {
+        this.gtag('event', 'page_view', {
+            'event_callback': (id) => {
+                if (this.googleId === id) console.log(`GA inited ${this.googleId}`);
+            },
+        });
+    },
+    initYandexMetrica() {
+        // this.ytag('getClientID', (clientID) => console.log('clientID:', clientID));
+        document.addEventListener(`yacounter${this.yandexId}inited`, (e) => console.log(`YM inited ${this.yandexId}`));
+    },
+    dispatch(target, payload) {
+        // this.ytag('reachGoal', target, payload);
+    },
+    init() {
+        this.initGoogleAnalytics();
+        this.initYandexMetrica();
+    },
+    trace(...args) {
+        console.log.apply(console, args);
+    },
+};
 
-    ym(62730118, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        ecommerce:"ymDataLayer"
+document.addEventListener('DOMContentLoaded', async () => {
+    await $tracking.init();
+
+    const re = new RegExp('^(https?)://apteka.ru($|\/)');
+    const links = Array.from(document.body.querySelectorAll('a[href]') || []);
+    links.filter(a => {
+        if (!re.test(a.href)) return false;
+        const onclick = (href, event) => {
+            event.preventDefault();
+            $tracking.dispatch('gotoApteka', {link: href});
+            setTimeout(() => window.location = href, 150);
+        };
+        return a.addEventListener('click', (e) => onclick(a.href, e)), true;
     });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/62730118" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-*/
+});
+
+/*
 const yaMetrix = {
     trackerId: 62730118,
     ytagConfig: {
