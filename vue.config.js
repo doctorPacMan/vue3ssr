@@ -6,7 +6,7 @@ const configExt = {
     module: {
         rules: [
             {
-                test: /\.(png|jp?eg|gif|webp|svg)(\?.*)?$/,
+                test: /\.(png|jp?eg|jfif|gif|webp)(\?.*)?$/,
                 use: [
                     {
                         loader: 'file-loader',
