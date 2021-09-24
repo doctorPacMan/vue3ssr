@@ -33,7 +33,8 @@ export default defineComponent({
             return `${this.spritePath}#${this.symbol}`;
         },
         spritePath():string {
-            return '/assets/sprite.svg';
+            const baseUrl = process.env.BASE_URL;
+            return `${baseUrl}assets/sprite.svg`;
         }
     },
 });

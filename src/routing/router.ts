@@ -3,8 +3,9 @@ import { isSSR } from '@/helpers'
 import { routes } from './routes'
 
 export function createApplicationRouter(): any {
+    const base:string = '';
     const router = createRouter({
-        history: isSSR() ? createMemoryHistory() : createWebHistory(),
+        history: isSSR() ? createMemoryHistory(base) : createWebHistory(),
         routes
     });
     return router;

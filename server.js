@@ -14,6 +14,7 @@ server.use(function(req, res, next) {
     return req.method === 'OPTIONS' ? res.send(200) : next();
 });
 
+// server.use('/plain-html/', express.static('./dist/html'));
 server.use('/', express.static('./dist/html'));
 
 /*

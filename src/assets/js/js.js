@@ -15,7 +15,8 @@ class SiteApp {
     }
     set allowCookies(allow) {
         const exp = new Date();
-        exp.setFullYear(exp.getFullYear() + (allow ? 2 : -1));
+        // exp.setFullYear(exp.getFullYear() + (allow ? 1 : -1));
+        exp.setHours(exp.getHours() + (allow ? 1 : -1));
         document.cookie = `${this.cookieName}=1; expires=${exp.toUTCString()}; path=/`;
 
         const el = this.divCookieWarn;

@@ -127,7 +127,6 @@
 <template>
 <div class="SiteHeader" id="siteheader">
     <div>
-
         <div class="SiteHeader__bttn">
             <button type="button" aria-label="меню" onclick="$app.toggleHeaderMenu()">
                 <icon symbol="menu"/><icon symbol="close"/>
@@ -148,7 +147,6 @@
                 <icon symbol="sale" />
             </a>
         </div>
-
     </div>
 </div>
 </template>

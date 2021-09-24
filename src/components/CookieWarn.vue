@@ -20,6 +20,7 @@
     p {margin: 0}
 }
 </style>
+
 <template>
 <div class="CookieWarn" id="cookieWarn" aria-hidden>
     <div>
@@ -31,3 +32,10 @@
     </div>
 </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+export default defineComponent({
+    name: 'CookieWarn',
+});
+</script>

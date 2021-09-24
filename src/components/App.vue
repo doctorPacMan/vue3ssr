@@ -37,6 +37,10 @@ export default defineComponent({
         SiteFooter,
         CookieWarn,
     },
+    mounted() {
+        // console.log((window as any)['']);
+        console.log(process.env.BASE_URL);
+    },
     serverPrefetch: async () => null,
 });
 </script>

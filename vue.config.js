@@ -1,7 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const nodeExternals = require('webpack-node-externals');
 
+const BASE_URL = '/';
 const configExt = {
     module: {
         rules: [
@@ -20,47 +22,23 @@ const configExt = {
             }
         ]
     },
-    plugins: [],
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.BASE_URL': JSON.stringify(BASE_URL),
+        }),
+    ],
     resolve: {
         symlinks: true,
         alias: {
             '@': path.resolve(__dirname, './src'),
         }
     },
-/*
-    module: {
-        rules: [
-            {
-                test: /\.css$/i,
-                use: [
-                    {loader: MiniCssExtractPlugin.loader},
-                    {loader: 'css-loader', options: cssOptions},
-                ]
-            },
-            {
-                test: /\.less$/i,
-                use: [
-                    {loader: MiniCssExtractPlugin.loader},
-                    {loader: 'css-loader', options: cssOptions},
-                    {loader: 'less-loader', options: {lessOptions: {strictMath: true}}},
-                ]
-            },
-        ]
-    },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'style/[name].css',
-            chunkFilename: 'style/[name].[chunkhash].css',
-            ignoreOrder: false,
-        }),
-    ],
-*/
 };
 
 module.exports = {
-    outputDir: './dist/client',
-    publicPath: '/',
     runtimeCompiler: true,
+    outputDir: './dist/client',
+    publicPath: process.env.SSR ? '/' : BASE_URL,
     devServer: {
         contentBase: ['./src/assets', './css', './js', './data'],
         contentBasePublicPath: ['/assets', '/css', '/js', '/data'],
