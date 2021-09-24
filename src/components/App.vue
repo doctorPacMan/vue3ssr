@@ -18,6 +18,7 @@
     <div class="siteIntros"><TitleImage/></div>
     <div class="siteBodyer"><RouterView/></div>
     <div class="siteFooter"><SiteFooter/></div>
+    <CookieWarn />
 </div>
 </template>
 
@@ -27,12 +28,14 @@ import AppHead from '@/components/AppHead.vue';
 import SiteHeader from '@/components/SiteHeader.vue';
 import SiteFooter from '@/components/SiteFooter.vue';
 import TitleImage from '@/components/Intro/Intro.vue';
+import CookieWarn from '@/components/CookieWarn.vue';
 export default defineComponent({
     components: {
         AppHead,
         SiteHeader,
         TitleImage,
         SiteFooter,
+        CookieWarn,
     },
     serverPrefetch: async () => null,
 });

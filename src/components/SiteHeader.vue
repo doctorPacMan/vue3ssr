@@ -129,7 +129,7 @@
     <div>
 
         <div class="SiteHeader__bttn">
-            <button type="button" aria-label="меню" onclick="toggleHeaderMenu()">
+            <button type="button" aria-label="меню" onclick="$app.toggleHeaderMenu()">
                 <icon symbol="menu"/><icon symbol="close"/>
             </button>
         </div>
