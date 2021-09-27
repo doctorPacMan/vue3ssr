@@ -34,7 +34,8 @@ export default <SSR.Scoped>function (ctx: SSR.Context): SSR.Renderer {
             const html = template.toString()
                 .replace('<meta name="head">', head)
                 .replace('<div id="app"></div>', `<div id="app">${app}</div>`)
-                .replace('<div id="state"></div>', `<script>window.__STATE__ = ${state}</script>`);
+                // .replace('<div id="state"></div>', `<script>window.__STATE__ = ${state}</script>`);
+                .replace('<div id="state"></div>', '');
             return html;
         },
         fetchHTML: async (route: string) => {

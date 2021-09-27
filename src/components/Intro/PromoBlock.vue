@@ -54,10 +54,10 @@
 
 <template>
 <div class="PromoBlock">
-    <a class="button" href="https://apteka.ru/promotions/">
+    <arulink class="button" href="/promotions/">
         <span>Все акции месяца</span>
         <icon symbol="rarr" />
-    </a>
+    </arulink>
 </div>
 </template>
 

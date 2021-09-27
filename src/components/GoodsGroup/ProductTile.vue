@@ -46,7 +46,7 @@
         <span v-text='item.name'/>
     </div>
     <div class="ProductTile__baton">
-        <a :href='item.href' class="button">Заказать</a>
+        <arulink :href='item.href' class="button">Заказать</arulink>
     </div>
 </div>
 </template>

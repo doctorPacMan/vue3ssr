@@ -138,14 +138,14 @@
         </div>
 
         <div class="SiteHeader__menu">
-            <a v-for='(v, k) in menuItems' :key='k' :href="v.href">{{v.name}}</a>
+            <arulink v-for='(v, k) in menuItems' :key='k' :href="v.href" v-text='v.name'/>
         </div>
 
         <div class="SiteHeader__sale">
-            <a class="button" aria-label="Скидки" href="https://apteka.ru/">
+            <arulink class="button" aria-label="Скидки" href="https://apteka.ru/">
                 <b>Скидки</b>
                 <icon symbol="sale" />
-            </a>
+            </arulink>
         </div>
     </div>
 </div>

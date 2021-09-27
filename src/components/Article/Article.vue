@@ -90,7 +90,7 @@
 
         <section>
             <webp src="/data/article/image5.jpg" width="760" height="506" alt=""/>
-            <a href="https://apteka.ru/search/?q=маски для лица">Очищающие маски</a>
+            <arulink href="/search/?q=маски для лица">Очищающие маски</arulink>
             призваны сделать то, что не удалось вашим привычным средствам - удалить излишки масла , грязи и пыли из самых труднодоступных участков вместе с отмершими клетками кожи, чтобы придать ей гладкость и здоровое сияние.
             Сегодня на рынке присутствует два основных типа масок: смываемые (в основном на основе глины) и маски-пленки.
         </section>
@@ -173,7 +173,7 @@
         </div>
 
         <div class="Article__more">
-            <a class="button-reds" href="https://apteka.ru/blog/articles/pro-uxod-za-soboj/">Больше статей</a>
+            <arulink class="button-reds" href="https://apteka.ru/blog/articles/pro-uxod-za-soboj/">Больше статей</arulink>
         </div>
 
     </article>

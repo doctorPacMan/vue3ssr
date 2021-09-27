@@ -25,7 +25,9 @@
 <div class="CookieWarn" id="cookieWarn" aria-hidden>
     <div>
         <p>Куки необходимы для более удобного посещения сайтов. Мы&nbsp;используем куки для вашего комфорта!</p>
-        <p><a target="_blank" href="https://apteka.ru/personal-protection/">Узнайте больше про использование cookie</a></p>
+        <p>
+            <arulink target="_blank" href="/personal-protection/">Узнайте больше про использование cookie</arulink>
+        </p>
     </div>
     <div>
         <button class="button" onclick="$app.allowCookies = true">Согласен</button>

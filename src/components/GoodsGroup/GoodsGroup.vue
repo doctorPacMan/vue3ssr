@@ -84,10 +84,10 @@
 
         <div class="GoodsGroup__title">
             <h2>{{group.title}}</h2>
-            <a class="link-rarr" :href='group.href'>
+            <arulink class="link-rarr" :href='group.href'>
                 <span>Больше товаров</span>
                 <icon symbol="rarr" />
-            </a>
+            </arulink>
         </div>
 
         <ul class="GoodsGroup__items tilesgrid"
@@ -99,10 +99,10 @@
         </ul>
 
         <div class="GoodsGroup__more">
-            <a class="link-rarr" :href='group.href'>
+            <arulink class="link-rarr" :href='group.href'>
                 <span>Больше товаров</span>
                 <icon symbol="rarr" />
-            </a>
+            </arulink>
         </div>
 </div>
 </template>
