@@ -27,12 +27,12 @@ const groups:{
             },
             {
                 name: 'CONSTANT DELIGHT ЭЛИКСИР ДЛЯ ВОЛОС 12В1 200МЛ',
-                photo: '3.png',
+                photo: '3.jpg',
                 href: 'https://apteka.ru/category/proficosmetics/',
             },
             {
                 name: 'ARAVIA PROFESSIONAL КРЕМ ДЛЯ ЛИЦА СУПЕРУВЛАЖНЕНИЕ И РЕГЕНЕРАЦИЯ С МОЧЕВИНОЙ (10%) И МУЦИНОМ УЛИТКИ 150МЛ',
-                photo: '2.png',
+                photo: '4.jpeg',
                 href: 'https://apteka.ru/category/proficosmetics/',
             },
         ],
