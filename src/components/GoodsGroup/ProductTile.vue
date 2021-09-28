@@ -50,19 +50,19 @@
 </style>
 
 <template>
-<div class="ProductTile">
-    <arulink :href='item.href'>
-        <span class="ProductTile__photo">
-            <webp :src='`/data/photo/${group}/${item.photo || "1.png"}`'/>
-        </span>
-        <span class="ProductTile__label">
-            <span v-text='item.name'/>
-        </span>
-        <span class="ProductTile__baton">
-            <button class="button">Заказать</button>
-        </span>
-    </arulink>
-</div>
+    <div class="ProductTile">
+        <arulink :href='item.href'>
+            <span class="ProductTile__photo">
+                <webp :src='`/data/photo/${group}/${item.photo || "1.png"}`'/>
+            </span>
+            <span class="ProductTile__label">
+                <span v-text='item.name'/>
+            </span>
+            <span class="ProductTile__baton">
+                <button class="button">Заказать</button>
+            </span>
+        </arulink>
+    </div>
 </template>
 
 <script lang="ts">
@@ -70,30 +70,9 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
     name: 'ProductTile',
-    components: {},
     props: {
         item: {required: true},
         group: {required: true}
-    },
-    setup(props) {
-        if (!props) console.log(props);
-        return {} // anything returned here will be available for the rest of the component
     }
-    // the "rest" of the component
 });
-/*
-import { Vue, Component, Prop } from 'vue-property-decorator'
-@Component<ProductTile>({
-    components: {},
-    data() {
-        return {
-            breadcrumbTitle: '',
-            modalOrderStatus: null,
-        };
-    },
-})
-export default class ProductTile extends Vue {
-    @Prop() x:any;
-}
-*/
 </script>

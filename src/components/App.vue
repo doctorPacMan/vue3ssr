@@ -33,6 +33,7 @@ import SiteFooter from '@/components/SiteFooter.vue';
 import TitleImage from '@/components/Intro/Intro.vue';
 import CookieWarn from '@/components/CookieWarn.vue';
 export default defineComponent({
+    name: 'App',
     components: {
         AppHead,
         SiteHeader,
@@ -40,6 +41,6 @@ export default defineComponent({
         SiteFooter,
         CookieWarn,
     },
-    serverPrefetch: async () => null,
+    // serverPrefetch: async () => null,
 });
 </script>

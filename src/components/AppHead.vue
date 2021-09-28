@@ -12,7 +12,6 @@
 
     <link rel="icon" href="/assets/favicon.ico"/>
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
-    <!-- link rel="canonical" href="https://косметичка.рф"/ -->
 </template>
 
 <script lang="ts">
@@ -61,7 +60,7 @@ export default defineComponent({
                 links: [
                     {
                         rel: 'canonical',
-                        href: 'https://apteka.tech'
+                        href: 'https://vsyacosmetika.ru'
                     },
                     {
                         rel: 'icon',

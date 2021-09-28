@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 const BASE_URL = '/';
@@ -47,14 +48,30 @@ module.exports = {
         port: 8080,
         writeToDisk: true
     },
+    configureWebpack: (config) => {
+        return !process.env.SSR ? {...configExt} : {
+            stats: {all: true},
+            module: {
+                rules: [
+                    {test: /\.css$/i, loader: 'null-loader'},
+                    {test: /\.less$/i, loader: 'null-loader'},
+                ]
+            },
+        };
+    },
     chainWebpack: (config) => {
+
         config.entryPoints.delete('app');
 
-        if (!process.env.SSR) return config.entry('client').add('./src/entry.client.ts');
+        if (!process.env.SSR) {
+            // const minicss = new MiniCssExtractPlugin({filename: '[name].mini.css'});
+            // config.plugin('mini-css-extract-plugin').use(minicss);
+            return config.entry('client').add('./src/entry.client.ts');
+        }
 
         config.entry('server').add('./src/entry.server.ts');
-
         config.target('node');
+
         config.output.libraryTarget('commonjs2');
 
         config.externals(nodeExternals({ allowlist: /\.(css|vue)$/ }));
@@ -70,16 +87,5 @@ module.exports = {
         config.plugins.delete('progress');
         config.plugins.delete('mini-css-extract-plugin');
         config.plugins.delete('friendly-errors');
-    },
-    configureWebpack: (config) => {
-        return !process.env.SSR ? {...configExt} : {
-            stats: {all: true},
-            module: {
-                rules: [
-                    {test: /\.css$/i, loader: 'null-loader'},
-                    {test: /\.less$/i, loader: 'null-loader'},
-                ]
-            },
-        };
     },
 }

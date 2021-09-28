@@ -3,8 +3,8 @@
 .PromoBlock {
     background: transparent none no-repeat 0 100%;
     background-image: url('/assets/img/illustration.svg');
-    background-size: 100% 100%;
     background-clip: padding-box;
+    background-size: 100% 100%;
     width: 345px;
     height: 201px;
     padding: 0 0 2px;
@@ -53,17 +53,15 @@
 </style>
 
 <template>
-<div class="PromoBlock">
-    <arulink class="button" href="/promotions/">
-        <span>Все акции месяца</span>
-        <icon symbol="rarr" />
-    </arulink>
-</div>
+    <div class="PromoBlock">
+        <arulink class="button" href="/promotions/">
+            <span>Все акции месяца</span>
+            <icon symbol="rarr" />
+        </arulink>
+    </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-export default defineComponent({
-    name: 'PromoBlock',
-});
+export default defineComponent({name: 'PromoBlock'});
 </script>

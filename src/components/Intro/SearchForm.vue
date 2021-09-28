@@ -2,8 +2,8 @@
 .SearchForm {
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
     justify-content: flex-start;
+    align-items: center;
 
     &__input {
         flex: 1 1 100%;
@@ -61,8 +61,8 @@
             autocomplete="new-password"
             spellcheck="false"
             type="text"
-            name="q"
-            value=""/>
+            value=""
+            name="q"/>
     </div>
     <div class="SearchForm__submit">
         <button type="submit" class="button-reds">Искать!</button>

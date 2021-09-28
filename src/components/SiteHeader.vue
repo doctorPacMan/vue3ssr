@@ -6,10 +6,11 @@
     background: white;
     padding: 11px 1rem 10px;
     height: 44px;
-    z-index: 1;
+
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 5;
 
     transition: none ease .25s 0s;
     transition-property: box-shadow;
@@ -95,11 +96,12 @@
         left: 0;
         right: 0;
         z-index: 10;
-        padding: 1.5rem 3.125rem 2rem;
+        padding: 1.5rem 4.125rem 2rem;
         background: white;
         max-width: unset;
         display: flex;
         flex-flow: column wrap;
+        justify-content: flex-start;
         justify-content: flex-start;
         align-items: flex-start;
         text-align: left;
@@ -107,7 +109,7 @@
         box-shadow: @box-shadow;
         & > .link {
             flex: 0 0 auto;
-            padding: .5rem 1rem;
+            padding: .5rem 0;
             text-decoration: none;
             white-space: nowrap;
         }
@@ -166,7 +168,7 @@
     </div>
 
     <div class="SiteHeader__menu">
-        <arulink class="link" v-for='(v, k) in menuItems' :key='k' :href="v.href" v-text='v.name'/>
+        <arulink class="link" v-for='(v, k) in menuItems' :key='k' :href="v.href">{{v.name}}</arulink>
         <arulink class="button-reds" aria-label="Скидки" href="https://apteka.ru/">
             <b>Скидки</b>
             <icon symbol="sale" />

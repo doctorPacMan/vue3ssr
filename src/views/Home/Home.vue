@@ -1,6 +1,3 @@
-<style lang="less">
-@import '@/assets/css/env.less';
-</style>
 <template>
 <div>
     <GoodsGroup v-for='(group, gk) in groups' :key='gk' :group='group'/>
@@ -19,25 +16,10 @@ export default defineComponent({
         GoodsGroup,
         Article,
     },
-    computed: {
-    },
-    methods: {
-    },
-    data():{groups?:any[]} {
-        return {
-            // groups: [],
-        };
-    },
     setup() {
-        // console.log('props', props);
         return {
             groups: [...groupsJson],
         };
     },
-    mounted() {
-        // console.log('groups', this.groups);
-        // this.groups = [...groupsJson];
-        // console.log('mm', this.groups2);
-    }
 });
 </script>

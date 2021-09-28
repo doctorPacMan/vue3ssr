@@ -98,7 +98,7 @@
                 <h6 v-text='sec.title'/>
                 <ul>
                     <li v-for='(link, n) in sec.links' :key='n'>
-                        <arulink :href='link.href' v-text='link.text' />
+                        <arulink :href='link.href'>{{link.text}}</arulink>
                     </li>
                 </ul>
             </section>
