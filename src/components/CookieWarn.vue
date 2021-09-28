@@ -1,10 +1,17 @@
 <style lang="less">
+@import '@/assets/css/env.less';
 .CookieWarn {
+    &-wrapper {
+        background: @darkblue;
+    }
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 5;
+
+    position: sticky;
+    bottom: 0px;
 
     background: rgba(255, 255, 255, .8);
     backdrop-filter: saturate(150%) blur(12px);

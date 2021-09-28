@@ -1,10 +1,23 @@
 <style lang="less">
 @import '@/assets/css/env.less';
+@box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.05);
+
 .SiteHeader {
     background: white;
     padding: 11px 1rem 10px;
     height: 44px;
-    position: relative;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    transition: none ease .25s 0s;
+    transition-property: box-shadow;
+
+    &[data-sticky] {
+        box-shadow: @box-shadow;
+    }
+
     & > div {
         max-width: @page-max-width;
         margin: 0 auto;
@@ -62,6 +75,13 @@
             }
         }
     }
+    &[aria-expanded] &__sale {
+        visibility: hidden;
+    }
+    @media (min-width: @screen-tablet) {
+        &[aria-expanded] &__sale {visibility: visible}
+    }
+
     &__logo {
         text-align: center;
         flex: 1 1 60%;
@@ -77,19 +97,25 @@
         z-index: 10;
         padding: 1.5rem 3.125rem 2rem;
         max-width: unset;
-        background: whitesmoke;
+        background: white;
         display: flex;
         flex-flow: column wrap;
         justify-content: flex-start;
         align-items: flex-start;
         text-align: left;
         gap: .125rem;
-        box-shadow: 0 14px 10px -10px rgba(0, 0, 0, .25);
-        & > a {
+        box-shadow: @box-shadow;
+        & > .link {
             flex: 0 0 auto;
             padding: .5rem 1rem;
             text-decoration: none;
             white-space: nowrap;
+        }
+        & > .button-reds {
+            width: 100%;
+            max-width: 321px;
+            margin: 1rem auto 0;
+
         }
     }
     &:not([aria-expanded]) &__menu {display: none}
@@ -117,7 +143,8 @@
             align-items: center;
             justify-content: space-between;
             background: none;
-            & > a {padding: 0 .125rem}
+            & > .link {padding: 0 .125rem}
+            & > .button-reds {display: none}
         }
         &:not([aria-expanded]) &__menu {display: flex}
     }
@@ -138,7 +165,11 @@
         </div>
 
         <div class="SiteHeader__menu">
-            <arulink v-for='(v, k) in menuItems' :key='k' :href="v.href" v-text='v.name'/>
+            <arulink class="link" v-for='(v, k) in menuItems' :key='k' :href="v.href" v-text='v.name'/>
+            <arulink class="button-reds" aria-label="Скидки" href="https://apteka.ru/">
+                <b>Скидки</b>
+                <icon symbol="sale" />
+            </arulink>
         </div>
 
         <div class="SiteHeader__sale">

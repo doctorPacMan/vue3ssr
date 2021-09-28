@@ -61,7 +61,13 @@
     @media (min-width: @screen-mobile) {
         border-radius: 26px;
     }
-    @media (min-width: @screen-mobile) {
+    @media (min-width: @screen-tablet) {
+        span {
+            font-size: @font-size-3;
+            line-height: 2.25;
+            height: 92px;
+            width: 611px;
+        }
     }
 }
 </style>

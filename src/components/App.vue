@@ -1,5 +1,8 @@
 <style lang="less">
 @import '@/assets/css/env.less';
+.siteHeader {
+    display: contents;
+}
 .siteBodyer {
     margin: 0 auto;
     min-width: @page-min-width;

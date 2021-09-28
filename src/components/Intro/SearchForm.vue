@@ -53,9 +53,13 @@
 
 <template>
 <form class="SearchForm" method="get" action="https://apteka.ru/category/basic_care">
+
     <div class="SearchForm__input">
         <icon symbol="seek" />
         <input placeholder="Название товара или бренда"
+            aria-label="Введите название товара или бренда"
+            autocomplete="new-password"
+            spellcheck="false"
             type="text"
             name="q"
             value=""/>

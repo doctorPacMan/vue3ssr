@@ -1,12 +1,21 @@
 <style lang="less">
+@import '@/assets/css/env.less';
 .ProductTile {
     min-width: 158px;
-    outline: 0px solid cyan;
-    outline-offset: -1px;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: flex-start;
-    justify-content: center;
+    color: @text;
+    & > a {
+        min-height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: center;
+        &:link,
+        &:hover,
+        &:visited {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
     &__photo {
         width: 100%;
         height: 231px;
@@ -24,6 +33,9 @@
         font-size: 1.125rem;
         font-size: .875rem;
         line-height: 1.43;
+        &:hover {
+            color: @blue;
+        }
     }
     &__baton {
         padding-top: 1rem;
@@ -39,15 +51,17 @@
 
 <template>
 <div class="ProductTile">
-    <div class="ProductTile__photo">
-        <webp :src='`/data/photo/${group}/${item.photo || "1.png"}`'/>
-    </div>
-    <div class="ProductTile__label">
-        <span v-text='item.name'/>
-    </div>
-    <div class="ProductTile__baton">
-        <arulink :href='item.href' class="button">Заказать</arulink>
-    </div>
+    <arulink :href='item.href'>
+        <span class="ProductTile__photo">
+            <webp :src='`/data/photo/${group}/${item.photo || "1.png"}`'/>
+        </span>
+        <span class="ProductTile__label">
+            <span v-text='item.name'/>
+        </span>
+        <span class="ProductTile__baton">
+            <button class="button">Заказать</button>
+        </span>
+    </arulink>
 </div>
 </template>
 

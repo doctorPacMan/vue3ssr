@@ -37,7 +37,6 @@
                     font-size: 1rem;
                     line-height: 1.25;
                     padding: .125rem 0 .25rem;
-                    -x-background: black;
                 }
             }
         }
