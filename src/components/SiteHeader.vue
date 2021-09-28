@@ -96,8 +96,8 @@
         right: 0;
         z-index: 10;
         padding: 1.5rem 3.125rem 2rem;
-        max-width: unset;
         background: white;
+        max-width: unset;
         display: flex;
         flex-flow: column wrap;
         justify-content: flex-start;
@@ -115,7 +115,8 @@
             width: 100%;
             max-width: 321px;
             margin: 1rem auto 0;
-
+            line-height: 1.5rem;
+            font-size: 1.25rem;
         }
     }
     &:not([aria-expanded]) &__menu {display: none}
@@ -153,32 +154,32 @@
 
 <template>
 <div class="SiteHeader" id="siteheader">
-    <div>
-        <div class="SiteHeader__bttn">
-            <button type="button" aria-label="меню" onclick="$app.toggleHeaderMenu()">
-                <icon symbol="menu"/><icon symbol="close"/>
-            </button>
-        </div>
-
-        <div class="SiteHeader__logo">
-            <img src="/assets/img/logo.svg" width="195" height="25" alt="косметичка.рф"/>
-        </div>
-
-        <div class="SiteHeader__menu">
-            <arulink class="link" v-for='(v, k) in menuItems' :key='k' :href="v.href" v-text='v.name'/>
-            <arulink class="button-reds" aria-label="Скидки" href="https://apteka.ru/">
-                <b>Скидки</b>
-                <icon symbol="sale" />
-            </arulink>
-        </div>
-
-        <div class="SiteHeader__sale">
-            <arulink class="button" aria-label="Скидки" href="https://apteka.ru/">
-                <b>Скидки</b>
-                <icon symbol="sale" />
-            </arulink>
-        </div>
+<div>
+    <div class="SiteHeader__bttn">
+        <button type="button" aria-label="меню" onclick="$app.toggleHeaderMenu()">
+            <icon symbol="menu"/><icon symbol="close"/>
+        </button>
     </div>
+
+    <div class="SiteHeader__logo">
+        <img src="/assets/img/logo.svg" width="195" height="25" alt="косметичка.рф"/>
+    </div>
+
+    <div class="SiteHeader__menu">
+        <arulink class="link" v-for='(v, k) in menuItems' :key='k' :href="v.href" v-text='v.name'/>
+        <arulink class="button-reds" aria-label="Скидки" href="https://apteka.ru/">
+            <b>Скидки</b>
+            <icon symbol="sale" />
+        </arulink>
+    </div>
+
+    <div class="SiteHeader__sale">
+        <arulink class="button" aria-label="Скидки" href="https://apteka.ru/">
+            <b>Скидки</b>
+            <icon symbol="sale" />
+        </arulink>
+    </div>
+</div>
 </div>
 </template>
 

@@ -81,7 +81,5 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-export default defineComponent({
-    name: 'ArticleIntro',
-});
+export default defineComponent({name: 'ArticleIntro'});
 </script>

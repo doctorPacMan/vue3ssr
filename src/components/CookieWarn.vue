@@ -1,9 +1,6 @@
 <style lang="less">
 @import '@/assets/css/env.less';
 .CookieWarn {
-    &-wrapper {
-        background: @darkblue;
-    }
     position: fixed;
     left: 0;
     right: 0;

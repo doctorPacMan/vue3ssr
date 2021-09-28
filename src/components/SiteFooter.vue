@@ -1,8 +1,8 @@
 <style lang="less">
 @import '@/assets/css/env.less';
 .SiteFooter {
-    background: @darkblue;
     color: white;
+    background: @darkblue;
     padding: 2.5rem 1rem 2rem;
     & > div {
         max-width: 1500px;
