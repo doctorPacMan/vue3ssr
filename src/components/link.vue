@@ -1,5 +1,5 @@
 <template>
-<a :href='hrefUtm'><slot>link</slot></a>
+<a :href='hrefUtm || null'><slot>link</slot></a>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -9,9 +9,10 @@ export default defineComponent({
         href: {type: String, required: false, default: '/'}
     },
     computed: {
-        hrefUtm():string {
+        hrefUtm():string|null {
 
             let href:string = this.$props.href;
+            if (!href) return null;
             if (!href.startsWith('http')) href = `https://apteka.ru${href}`;
 
             const url = new URL(href);

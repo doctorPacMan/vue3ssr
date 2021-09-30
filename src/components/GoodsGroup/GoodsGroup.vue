@@ -94,7 +94,7 @@
             :class="{[`tilesgrid--lines-${group.lines}`]: !!group.lines}">
 
             <li v-for='(item,k) in group.items' :key='k'>
-                <ProductTile :group='group.url' :item='item'/>
+                <ProductTile :group='group' :item='item'/>
             </li>
         </ul>
 

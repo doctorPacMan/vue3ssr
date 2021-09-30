@@ -51,9 +51,9 @@
 
 <template>
     <div class="ProductTile">
-        <arulink :href='item.href'>
+        <arulink :href='itemHref'>
             <span class="ProductTile__photo">
-                <webp :src='`/data/photo/${group}/${item.photo || "1.png"}`'/>
+                <webp :src='`/data/photo/${group.url}/${item.photo || "1.png"}`'/>
             </span>
             <span class="ProductTile__label">
                 <span v-text='item.name'/>
@@ -72,7 +72,13 @@ export default defineComponent({
     name: 'ProductTile',
     props: {
         item: {required: true},
-        group: {required: true}
-    }
+        group: {required: true},
+   },
+    computed: {
+        itemHref() {
+            const {item, group} = this.$props as any;
+            return item.href || group.href || null;
+        }
+    },
 });
 </script>
