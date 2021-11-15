@@ -125,16 +125,19 @@
 
     @media (min-width: @screen-tablet) {
         &__logo {
-            flex: 1 1 35%;
+            /* flex: 1 1 35%; */
+            flex: 1 1 20%;
             padding-right: 5%;
         }
         &__sale {
             flex: 1 1 20%;
             padding-left: 2%;
         }
+
         &__bttn {
             display: none;
         }
+
         &__menu {
             display: flex;
             padding: 0;
@@ -164,7 +167,7 @@
         </div>
 
         <div class="SiteHeader__logo">
-            <img src="/assets/img/logo.svg" width="195" height="25" alt="косметичка.рф"/>
+            <!-- img src="/assets/img/logo.svg" width="195" height="25" alt="косметичка.рф"/ -->
         </div>
 
         <div class="SiteHeader__menu">

@@ -1,13 +1,10 @@
 <template>
-    <title>косметичка.рф</title>
-
-    <!-- meta http-equiv="Content-Security-Policy" :content="conSecPol"/ -->
-
-    <meta name="description" content='Всё для вашей красоты на одном сайте'/>
+    <title v-text='$data.head.title'/>
+    <meta name="description" :content='$data.head.title'/>
     <meta name="keywords" content=""/>
 
-    <meta property="og:title" content="косметичка.рф"/>
-    <meta property="og:description" content='Всё для вашей красоты на одном сайте'/>
+    <meta property="og:title" :content='$data.head.title'/>
+    <meta property="og:description" :content='$data.head.title'/>
     <meta property="og:image" content="/assets/apple-touch-icon.png"/>
 
     <link rel="icon" href="/assets/favicon.ico"/>
@@ -42,7 +39,7 @@ export default defineComponent({
         if (isSSR()) "SSR";
         return {
             head:{
-                title: 'косметичка.рф',
+                title: 'Всё для вашей красоты на одном сайте',
                 meta: [
                     {
                         name: 'description',
