@@ -156,32 +156,32 @@
 
 <template>
 <div class="SiteHeader" id="siteheader">
-<div>
-    <div class="SiteHeader__bttn">
-        <button type="button" aria-label="меню" onclick="$app.toggleHeaderMenu()">
-            <icon symbol="menu"/><icon symbol="close"/>
-        </button>
-    </div>
+    <div>
+        <div class="SiteHeader__bttn">
+            <button type="button" aria-label="меню" onclick="$app.toggleHeaderMenu()">
+                <icon symbol="menu"/><icon symbol="close"/>
+            </button>
+        </div>
 
-    <div class="SiteHeader__logo">
-        <img src="/assets/img/logo.svg" width="195" height="25" alt="косметичка.рф"/>
-    </div>
+        <div class="SiteHeader__logo">
+            <img src="/assets/img/logo.svg" width="195" height="25" alt="косметичка.рф"/>
+        </div>
 
-    <div class="SiteHeader__menu">
-        <arulink class="link" v-for='(v, k) in menuItems' :key='k' :href="v.href">{{v.name}}</arulink>
-        <arulink class="button-reds" aria-label="Скидки" href="https://apteka.ru/">
-            <b>Скидки</b>
-            <icon symbol="sale" />
-        </arulink>
-    </div>
+        <div class="SiteHeader__menu">
+            <arulink class="link" v-for='(v, k) in menuItems' :key='k' :href="v.href">{{v.name}}</arulink>
+            <arulink class="button-reds" aria-label="Скидки" href="https://apteka.ru/">
+                <b>Скидки</b>
+                <icon symbol="sale" />
+            </arulink>
+        </div>
 
-    <div class="SiteHeader__sale">
-        <arulink class="button" aria-label="Скидки" href="https://apteka.ru/">
-            <b>Скидки</b>
-            <icon symbol="sale" />
-        </arulink>
+        <div class="SiteHeader__sale">
+            <arulink class="button" aria-label="Скидки" href="https://apteka.ru/">
+                <b>Скидки</b>
+                <icon symbol="sale" />
+            </arulink>
+        </div>
     </div>
-</div>
 </div>
 </template>
 

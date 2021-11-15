@@ -67,6 +67,7 @@
     <div class="SearchForm__submit">
         <button type="submit" class="button-reds">Искать!</button>
     </div>
+
 </form>
 </template>
 

@@ -53,12 +53,12 @@
 </style>
 
 <template>
-    <div class="PromoBlock">
-        <arulink class="button" href="/promotions/">
-            <span>Все акции месяца</span>
-            <icon symbol="rarr" />
-        </arulink>
-    </div>
+<div class="PromoBlock">
+    <arulink class="button" href="/promotions/">
+        <span>Все акции месяца</span>
+        <icon symbol="rarr" />
+    </arulink>
+</div>
 </template>
 
 <script lang="ts">

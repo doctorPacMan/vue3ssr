@@ -59,14 +59,11 @@
             font-size: @font-size-4;
         }
     }
-    &__signa {
-        padding: .5rem 0 0;
-        margin: 1.5rem 0 0;
-        text-align: center;
-    }
+
     @media (min-width: @screen-mobile) {
         padding: 4rem 1.25rem 3.5rem;
     }
+
     @media (min-width: @screen-tablet) {
         & > div {
             flex-flow: row wrap;
@@ -107,10 +104,6 @@
         <div class="SiteFooter__phone">
             <span>Горячая линия</span>
             <a href="tel:88007008888">8 800 700 88 88</a>
-        </div>
-
-        <div class="SiteFooter__signa">
-            <b>КОСМЕТИЧКА.РФ</b>
         </div>
 
     </div>

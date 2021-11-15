@@ -73,10 +73,10 @@
 </style>
 
 <template>
-<div class="ArticleIntro">
-    <img src="/assets/img/img2.svg" width="1339" height="261" alt="" />
-    <div><span>Блок эксперта</span></div>
-</div>
+    <div class="ArticleIntro">
+        <img src="/assets/img/img2.svg" width="1339" height="261" alt="" />
+        <div><span>Блок эксперта</span></div>
+    </div>
 </template>
 
 <script lang="ts">

@@ -82,6 +82,7 @@
 
 <template>
 <div class="Article">
+
     <div class="Article__intro"><ArticleIntro/></div>
 
     <div class="Article__body">

@@ -1,6 +1,7 @@
 <template>
-<a :href='hrefUtm || null'><slot>link</slot></a>
+    <a :href='hrefUtm || null'><slot>link</slot></a>
 </template>
+
 <script lang="ts">
 import { defineComponent } from 'vue';
 export default defineComponent({
